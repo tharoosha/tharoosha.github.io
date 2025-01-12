@@ -404,7 +404,7 @@ export const education = [
     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQB94CkjZvDkNJrit3zvXXkDAoWGrvlr1sNHw&s",
     school: "University of Moratuwa, Sri Lanka",
     date: "Jul 2021 - Jul 2025",
-    grade: " CGPA 3.42/4.00 (eligible for second upper)",
+    grade: " CGPA 3.62/4.00 (eligible for second upper)",
     desc: "I am currently pursuing a Bachelor's degree in Computer Science and Engineering at the University of Moratuwa, with a specialization in Data Science and Engineering and a minor in Mathematics. My coursework covers a wide range of topics, including Data Visualization, Data Science, Advanced Data Structures, Database Internals, Big Data Analytics, and more. This solid foundation allows me to approach complex problems with a combination of analytical rigor and technical expertise, preparing me for the evolving world of technology and data.",
     degree: "BSc Eng Hons, Computer Science & Engineering specializing in Data Science and Engineering",
   },
