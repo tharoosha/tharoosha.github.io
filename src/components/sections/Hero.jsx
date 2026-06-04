@@ -1,275 +1,116 @@
 import React from "react";
 import styled from "styled-components";
 import { Bio } from "../../data/constants";
-import Typewriter from "typewriter-effect";
-import HeroImg from "../../images/HeroImage_1.jpeg";
-import HeroBgAnimation from "../HeroBgAnimation";
-import { Tilt } from "react-tilt";
+import HeroImg from "../../images/HeroImage_1.png";
 import { motion } from "framer-motion";
-import {
-  headContainerAnimation,
-  headContentAnimation,
-  headTextAnimation,
-} from "../../utils/motion";
-import StarCanvas from "../canvas/Stars";
-import FacebookIcon from "@mui/icons-material/Facebook";
-import TwitterIcon from "@mui/icons-material/Twitter";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import InstagramIcon from "@mui/icons-material/Instagram";
-import GitHubIcon from "@mui/icons-material/GitHub";
-import  MediumIcon  from "../../images/Medium Icon.svg";
-import Buymecoffee from "../../images/Yellow Button.png"
-const HeroContainer = styled.div`
+
+const HeroSection = styled.div`
+  background: #FAF8F4;
   display: flex;
-  justify-content: center;
-  position: relative;
-  padding: 80px 30px;
-  z-index: 1;
-
-  @media (max-width: 960px) {
-    padding: 66px 16px;
-  }
-
-  @media (max-width: 640px) {
-    padding: 32px 16px;
-  }
-
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 70% 95%, 0 100%);
-`;
-const HeroInnerContainer = styled.div`
-  position: relative;
-  display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  width: 100%;
-  max-width: 1100px;
-
-  @media (max-width: 960px) {
-    flex-direction: column;
-  }
-`;
-const HeroLeftContainer = styled.div`
-  width: 100%;
-  order: 1;
-  @media (max-width: 960px) {
-    order: 2;
-    margin-bottom: 30px;
-    display: flex;
-    gap: 6px;
-    flex-direction: column;
-    align-items: center;
-  }
-`;
-const HeroRightContainer = styled.div`
-  width: 100%;
-  order: 2;
-  display: flex;
-  justify-content: end;
-  @media (max-width: 960px) {
-    order: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-contents: center;
-    margin-bottom: 80px;
-  }
-
-  @media (max-width: 640px) {
-    margin-bottom: 30px;
-  }
-`;
-
-const Title = styled.div`
-  font-weight: 700;
-  font-size: 50px;
-  color: ${({ theme }) => theme.text_primary};
-  line-height: 68px;
-
-  @media (max-width: 960px) {
-    text-align: center;
-  }
-
-  @media (max-width: 960px) {
-    font-size: 40px;
-    line-height: 48px;
-    margin-bottom: 8px;
-  }
-`;
-
-const TextLoop = styled.div`
-  font-weight: 600;
-  font-size: 32px;
-  display: flex;
-  gap: 12px;
-  color: ${({ theme }) => theme.text_primary};
-  line-height: 68px;
-
-  @media (max-width: 960px) {
-    text-align: center;
-  }
-
-  @media (max-width: 960px) {
-    font-size: 22px;
-    line-height: 48px;
-    margin-bottom: 16px;
-  }
-`;
-
-const Span = styled.div`
-  cursor: pointer;
-  color: ${({ theme }) => theme.primary};
-`;
-
-const SubTitle = styled.div`
-  font-size: 20px;
-  line-height: 32px;
-  margin-bottom: 42px;
-  color: ${({ theme }) => theme.text_primary + 95};
-
-  @media (max-width: 960px) {
-    text-align: center;
-  }
-
-  @media (max-width: 960px) {
-    font-size: 16px;
-    line-height: 32px;
-  }
-`;
-
-
-const SocialMediaIcons = styled.div`
-  display: flex;
-  margin-top: 1rem;
-`;
-
-const SocialMediaIcon = styled.a`
-  display: inline-block;
-  margin: 0 1rem;
-  font-size: 1.5rem;
-  color: ${({ theme }) => theme.text_primary};
-  transition: color 0.2s ease-in-out;
-  &:hover {
-    color: ${({ theme }) => theme.primary};
-  }
-`;
-
-const Img = styled.img`
-  border-radius: 50%;
-  width: 100%;
-  height: 100%;
-  max-width: 400px;
-  max-height: 400px;
-  border: 2px solid ${({ theme }) => theme.primary};
-
-  @media (max-width: 640px) {
-    max-width: 280px;
-    max-height: 280px;
-  }
-`;
-
-const HeroBg = styled.div`
-  position: absolute;
-  display: flex;
-  justify-content: end;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  max-width: 1360px;
+  padding: 52px 0 0;
   overflow: hidden;
-  padding: 0 30px;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translateX(-50%) translateY(-50%);
-  transform: translateX(-50%) translateY(-50%);
+`;
 
-  @media (max-width: 960px) {
-    justify-content: center;
-    padding: 0 0px;
+const TextBlock = styled(motion.div)`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 860px;
+  width: 100%;
+  padding: 0 24px;
+  margin-bottom: 28px;
+`;
+
+const Headline = styled.h1`
+  font-size: 68px;
+  font-weight: 800;
+  color: #111111;
+  line-height: 1.1;
+  margin: 0 0 12px;
+  letter-spacing: -2px;
+
+  @media (max-width: 768px) {
+    font-size: 40px;
+    letter-spacing: -1px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 30px;
   }
 `;
 
-const HoverImage = styled.img`
-  width: auto;
-  height: 45px;
-  margin-top: 20px;
-  transition: transform 0.3s ease-in-out;
+const HeadlineNormal = styled.span`
+  font-weight: 800;
+  font-style: normal;
+`;
 
-  &:hover {
-    transform: scale(1.05); /* Enlarges the image */
+
+const RoleRow = styled.div`
+  font-size: 22px;
+  font-weight: 500;
+  color: #666666;
+  display: flex;
+  gap: 2px;
+  align-items: center;
+  margin-bottom: 12px;
+
+  @media (max-width: 768px) {
+    font-size: 16px;
   }
 `;
 
+const RoleAccent = styled.span`
+  color: ${({ theme }) => theme.primary};
+  font-weight: 600;
+`;
+
+
+const ImageWrapper = styled(motion.div)`
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+`;
+
+const HeroImage = styled.img`
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+
+  @media (max-width: 768px) {
+    height: 300px;
+  }
+`;
 
 const Hero = () => {
   return (
     <div id="About">
-      <HeroContainer>
-        <HeroBg>
-          <StarCanvas />
-          <HeroBgAnimation />
-        </HeroBg>
+      <HeroSection>
+        <TextBlock
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
+          <RoleRow>
+            Hi, I'm <RoleAccent>{Bio.name}</RoleAccent>
+          </RoleRow>
+          <Headline>
+            <HeadlineNormal>Software Engineer</HeadlineNormal>
+          </Headline>
+        </TextBlock>
 
-        <motion.div {...headContainerAnimation}>
-          <HeroInnerContainer>
-            <HeroLeftContainer>
-              <motion.div {...headTextAnimation}>
-                <Title>
-                  Hi, I am  {Bio.name}
-                </Title>
-                <TextLoop>
-                  I am a
-                  <Span>
-                    <Typewriter
-                      options={{
-                        strings: Bio.roles,
-                        autoStart: true,
-                        loop: true,
-                      }}
-                    />
-                  </Span>
-                </TextLoop>
-              </motion.div>
-
-              <motion.div {...headContentAnimation}>
-                <SubTitle>{Bio.description}</SubTitle>
-              </motion.div>
-
-              {/* <ResumeButton href={Bio.resume} target="_blank">
-                Check Resume
-              </ResumeButton> */}
-              <SocialMediaIcons>
-                <SocialMediaIcon href={Bio.github} target="display">
-                  <GitHubIcon />
-                </SocialMediaIcon>
-                <SocialMediaIcon href={Bio.twitter} target="display">
-                  <TwitterIcon />
-                </SocialMediaIcon>
-                <SocialMediaIcon href={Bio.linkedin} target="display">
-                  <LinkedInIcon />
-                </SocialMediaIcon>
-                <SocialMediaIcon href={Bio.medium} target="display">
-                  <img src={MediumIcon} alt="" style={{ width: '28px', height: 'auto' }} />
-                  {/* <MediumIcon /> */}
-                </SocialMediaIcon>
-              </SocialMediaIcons>
-              <a href="https://www.buymeacoffee.com/vihidundpt">
-              <HoverImage src={Buymecoffee} alt="" />
-              </a>
-
-            </HeroLeftContainer>
-            <HeroRightContainer>
-              <motion.div {...headContentAnimation}>
-                <Tilt>
-                  <Img src={HeroImg} alt="Vihidun Tharoosha" />
-                </Tilt>
-              </motion.div>
-            </HeroRightContainer>
-          </HeroInnerContainer>
-        </motion.div>
-      </HeroContainer>
+        <ImageWrapper
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
+        >
+          <HeroImage src={HeroImg} alt="Tharoosha Vihidun" />
+        </ImageWrapper>
+      </HeroSection>
     </div>
   );
 };

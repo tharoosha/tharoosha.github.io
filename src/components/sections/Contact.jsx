@@ -1,173 +1,153 @@
-import React, { useRef } from "react";
+import React from "react";
 import styled from "styled-components";
-import emailjs from "@emailjs/browser";
-import EarthCanvas from "../canvas/Earth";
+import { Bio } from "../../data/constants";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import TwitterIcon from "@mui/icons-material/Twitter";
+import ArticleIcon from "@mui/icons-material/Article";
 
-const Container = styled.div`
+const Section = styled.div`
+  background: #FAF8F4;
+  padding: 48px 24px 80px;
   display: flex;
   justify-content: center;
-  gap: 12px;
-  z-index: 1;
-  align-items: center;
-  @media (max-width: 960px) {
-    padding: 0px;
-  }
 `;
 
-const Wrapper = styled.div`
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: column;
+const Card = styled.div`
   width: 100%;
-  max-width: 1350px;
-  padding: 0px 0px 80px 0px;
-  gap: 12px;
-  @media (max-width: 960px) {
-    flex-direction: column;
-  }
-`;
-
-const Title = styled.div`
-  font-size: 52px;
-  text-align: center;
-  font-weight: 600;
-  margin-top: 20px;
-  color: ${({ theme }) => theme.text_primary};
-  @media (max-width: 768px) {
-    margin-top: 12px;
-    font-size: 32px;
-  }
-`;
-
-const Desc = styled.div`
-  font-size: 18px;
-  text-align: center;
-  max-width: 600px;
-  color: ${({ theme }) => theme.text_secondary};
-  @media (max-width: 768px) {
-    margin-top: 12px;
-    font-size: 16px;
-  }
-`;
-const ContactForm = styled.form`
-  width: 95%;
-  max-width: 600px;
+  max-width: 1000px;
+  background: #111111;
+  border-radius: 28px;
+  padding: 80px 40px;
   display: flex;
   flex-direction: column;
-  background-color: rgba(255, 255, 255, 0.83);
-  border: 1px solid rgba(255, 255, 255, 0.125);
-  padding: 32px;
-  border-radius: 12px;
-  box-shadow: rgba(23, 92, 230, 0.1) 0px 4px 24px;
-  margin-top: 28px;
-  gap: 12px;
-`;
-const ContactTitle = styled.div`
-  font-size: 28px;
-  margin-bottom: 6px;
-  font-weight: 600;
-  color: ${({ theme }) => theme.text_primary};
-`;
-const ContactInput = styled.input`
-  flex: 1;
-  background-color: transparent;
-  border: 1px solid ${({ theme }) => theme.text_secondary + 50};
-  outline: none;
-  font-size: 18px;
-  color: ${({ theme }) => theme.text_primary};
-  border-radius: 12px;
-  padding: 12px 16px;
-  &:focus {
-    border: 1px solid ${({ theme }) => theme.primary};
+  align-items: center;
+  text-align: center;
+  gap: 28px;
+
+  @media (max-width: 768px) {
+    padding: 56px 24px;
+    border-radius: 20px;
   }
 `;
-const ContactInputMessage = styled.textarea`
-  flex: 1;
-  background-color: transparent;
-  border: 1px solid ${({ theme }) => theme.text_secondary + 50};
-  outline: none;
-  font-size: 18px;
-  color: ${({ theme }) => theme.text_primary};
-  border-radius: 12px;
-  padding: 12px 16px;
-  &:focus {
-    border: 1px solid ${({ theme }) => theme.primary};
+
+const Heading = styled.h2`
+  font-size: 58px;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.1;
+  margin: 0;
+  letter-spacing: -2px;
+
+  @media (max-width: 768px) {
+    font-size: 36px;
+    letter-spacing: -1px;
   }
 `;
-const ContactButton = styled.input`
-  width: 100%;
+
+const HeadingItalic = styled.em`
+  font-style: italic;
+  font-weight: 700;
+  color: #FF5722;
+`;
+
+const Subtitle = styled.p`
+  font-size: 17px;
+  color: #888888;
+  line-height: 1.7;
+  max-width: 420px;
+  margin: 0;
+
+  @media (max-width: 768px) {
+    font-size: 15px;
+  }
+`;
+
+const GetInTouchBtn = styled.a`
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #ffffff;
+  color: #111111;
+  border-radius: 50px;
+  padding: 16px 40px;
+  font-size: 16px;
+  font-weight: 700;
   text-decoration: none;
-  text-align: center;
-  background: rgb(30, 136, 236);
-  // background: linear-gradient(
-  //   225deg,
-  //   hsla(271, 100%, 50%, 1) 0%,
-  //   hsla(294, 100%, 50%, 1) 100%
-  // );
-  // background: -moz-linear-gradient(
-  //   225deg,
-  //   hsla(271, 100%, 50%, 1) 0%,
-  //   hsla(294, 100%, 50%, 1) 100%
-  // );
-  // background: -webkit-linear-gradient(
-  //   225deg,
-  //   hsla(271, 100%, 50%, 1) 0%,
-  //   hsla(294, 100%, 50%, 1) 100%
-  // );
-  padding: 13px 16px;
-  margin-top: 2px;
-  border-radius: 12px;
-  border: none;
-  // color: ${({ theme }) => theme.text_primary};
-  color: #f2f2f2;
+  transition: background 0.2s ease, color 0.2s ease;
+  letter-spacing: -0.3px;
+
+  &:hover {
+    background: #FF5722;
+    color: #ffffff;
+  }
+`;
+
+const Arrow = styled.span`
   font-size: 18px;
-  font-weight: 600;
+  transition: transform 0.2s ease;
+  ${GetInTouchBtn}:hover & {
+    transform: translateX(3px);
+  }
+`;
+
+const SocialRow = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 8px;
+`;
+
+const SocialChip = styled.a`
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #aaaaaa;
+  border: 1px solid #2a2a2a;
+  border-radius: 50px;
+  padding: 9px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+
+  &:hover {
+    border-color: #FF5722;
+    color: #FF5722;
+    background: rgba(255, 87, 34, 0.06);
+  }
 `;
 
 const Contact = () => {
-  const form = useRef();
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    emailjs.sendForm(
-        "service_exm4vkj",
-        "template_rm3jnk6",
-        e.target,
-        "RkzBfmUTVPp4Ks5qE"
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-          alert('Message Sent Successfully')
-        },
-        (error) => {
-          console.log(error.text);
-          alert('Something went wrong!')
-        }
-      );
-    e.target.reset()
-  };
-
   return (
-    <Container>
-      <Wrapper>
-        <EarthCanvas />
-        <Title>Contact</Title>
-        <Desc>
-          Feel free to reach out to me for any questions or opportunities!
-        </Desc>
-        <ContactForm onSubmit={handleSubmit}>
-          <ContactTitle>Email Me 🚀</ContactTitle>
-          <ContactInput placeholder="Your Email" name="from_email" />
-          <ContactInput placeholder="Your Name" name="from_name" />
-          <ContactInput placeholder="Subject" name="subject" />
-          <ContactInputMessage placeholder="Message" name="message" rows={4} />
-          <ContactButton type="submit" value="Send" />
-        </ContactForm>
-      </Wrapper>
-    </Container>
+    <Section id="Contact">
+      <Card>
+        <Heading>
+          Let's build <HeadingItalic>together</HeadingItalic>
+        </Heading>
+        <Subtitle>
+          Open to collaboration, consulting, and ambitious projects. Feel free to reach out.
+        </Subtitle>
+        <GetInTouchBtn href={`mailto:tharooshavihidun@gmail.com`}>
+          Get in touch <Arrow>→</Arrow>
+        </GetInTouchBtn>
+        <SocialRow>
+          <SocialChip href={Bio.github} target="_blank">
+            <GitHubIcon style={{ fontSize: 16 }} /> GitHub
+          </SocialChip>
+          <SocialChip href={Bio.linkedin} target="_blank">
+            <LinkedInIcon style={{ fontSize: 16 }} /> LinkedIn
+          </SocialChip>
+          <SocialChip href={Bio.twitter} target="_blank">
+            <TwitterIcon style={{ fontSize: 16 }} /> X / Twitter
+          </SocialChip>
+          <SocialChip href={Bio.medium} target="_blank">
+            <ArticleIcon style={{ fontSize: 16 }} /> Medium
+          </SocialChip>
+        </SocialRow>
+      </Card>
+    </Section>
   );
 };
 

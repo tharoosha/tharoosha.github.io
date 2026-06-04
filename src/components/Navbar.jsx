@@ -1,198 +1,177 @@
 import React, { useState } from "react";
-import { Link as LinkR } from "react-router-dom";
-import styled, { useTheme } from "styled-components";
+import styled from "styled-components";
+import { Link } from "react-router-dom";
 import { Bio } from "../data/constants";
-import { MenuRounded } from "@mui/icons-material";
+import { MenuRounded, CloseRounded } from "@mui/icons-material";
 
-const Nav = styled.div`
-  background-color: ${({ theme }) => theme.bg};
-  height: 80px;
+const NavOuter = styled.div`
+  background: #FAF8F4;
   display: flex;
-  align-items: center;
   justify-content: center;
-  font-size: 1rem;
+  padding: 16px 24px;
   position: sticky;
   top: 0;
   z-index: 10;
-  color: white;
-`;
-const ColorText = styled.div`
-  color: ${({ theme }) => theme.primary};
-  font-size: 25px;
 `;
 
-const NavbarContainer = styled.div`
-  width: 100%;
-  max-width: 1200px;
-  padding: 0 24px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-size: 1rem;
-`;
-const NavLogo = styled(LinkR)`
-  display: flex;
-  align-items: center;
-  width: 80%;
-  padding: 0 6px;
-  font-weight: 500;
-  font-size: 18px;
-  text-decoration: none;
-  color: #1a87db;
-`;
-
-const NavItems = styled.ul`
-  width: 100%;
+const Pill = styled.nav`
+  background: #ffffff;
+  border: 1px solid #e8e4dc;
+  border-radius: 100px;
+  padding: 0 32px;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 32px;
-  padding: 0 6px;
-  list-style: none;
+  height: 52px;
+  gap: 8px;
+  max-width: 680px;
+  width: 100%;
 
-  @media screen and (max-width: 768px) {
+  @media (max-width: 768px) {
     display: none;
   }
 `;
 
-const NavLink = styled.a`
-  color: ${({ theme }) => theme.text_primary};
-  font-weight: 500;
+const navLinkStyles = `
+  color: #222222;
+  font-weight: 600;
+  font-size: 15px;
   cursor: pointer;
-  transition: all 0.2s ease-in-out;
   text-decoration: none;
+  padding: 6px 14px;
+  border-radius: 50px;
+  transition: background 0.15s ease, color 0.15s ease;
+  white-space: nowrap;
   &:hover {
-    color: ${({ theme }) => theme.primary};
+    background: rgba(255, 87, 34, 0.08);
+    color: #FF5722;
   }
 `;
 
-const ButtonContainer = styled.div`
-  width: 80%;
-  height: 100%;
-  display: flex;
-  justify-content: end;
-  align-items: center;
-  padding: 0 6px;
-  @media screen and (max-width: 768px) {
-    display: none;
-  }
-`;
+const NavLink = styled.a`${navLinkStyles}`;
+const RouterNavLink = styled(Link)`${navLinkStyles}`;
 
-const GithubButton = styled.a`
-  border: 1px solid ${({ theme }) => theme.primary};
-  color: ${({ theme }) => theme.primary};
-  justify-content: center;
-  display: flex;
-  align-items: center;
-  border-radius: 20px;
-  cursor: pointer;
-  padding: 10px 20px;
-  font-size: 16px;
-  font-weight: 500;
-  transition: all 0.6s ease-in-out;
-  text-decoration: none;
-  &:hover {
-    background: ${({ theme }) => theme.primary};
-    color: ${({ theme }) => theme.text_primary};
-  }
-`;
-
-const MobileIcon = styled.div`
-  height: 100%;
-  display: flex;
-  align-items: center;
-  color: ${({ theme }) => theme.text_primary};
+const MobileRow = styled.div`
   display: none;
-  @media screen and (max-width: 768px) {
-    display: block;
+  width: 100%;
+  max-width: 680px;
+  justify-content: space-between;
+  align-items: center;
+
+  @media (max-width: 768px) {
+    display: flex;
   }
 `;
 
-const MobileMenu = styled.ul`
-  width: 100%;
+const MobileLogo = styled.span`
+  font-weight: 700;
+  font-size: 18px;
+  color: #111111;
+`;
+
+const MobileLogoAccent = styled.span`
+  color: #FF5722;
+`;
+
+const MobileIcon = styled.button`
+  background: none;
+  border: 1px solid #e8e4dc;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #111111;
+`;
+
+const MobileMenu = styled.div`
+  position: absolute;
+  top: 84px;
+  left: 16px;
+  right: 16px;
+  background: #ffffff;
+  border: 1px solid #e8e4dc;
+  border-radius: 20px;
+  padding: 16px;
   display: flex;
   flex-direction: column;
-  align-items: start;
-  gap: 16px;
-  padding: 0 6px;
-  list-style: none;
-  width: 100%;
-  padding: 12px 40px 24px 40px;
-  background: ${({ theme }) => theme.card_light + 99};
-  position: absolute;
-  top: 80px;
-  right: 0;
+  gap: 4px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  z-index: 100;
+`;
 
-  transition: all 0.6s ease-in-out;
-  transform: ${({ isOpen }) =>
-    isOpen ? "translateY(0)" : "translateY(-100%)"};
-  border-radius: 0 0 20px 20px;
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
-  opacity: ${({ isOpen }) => (isOpen ? "100%" : "0")};
-  z-index: ${({ isOpen }) => (isOpen ? "1000" : "-1000")};
+const mobileNavLinkStyles = `
+  color: #222222;
+  font-weight: 600;
+  font-size: 15px;
+  text-decoration: none;
+  padding: 10px 16px;
+  border-radius: 12px;
+  transition: background 0.15s ease, color 0.15s ease;
+  &:hover {
+    background: rgba(255, 87, 34, 0.08);
+    color: #FF5722;
+  }
+`;
+
+const MobileNavLink = styled.a`${mobileNavLinkStyles}`;
+const RouterMobileNavLink = styled(Link)`${mobileNavLinkStyles}`;
+
+const ResumeLink = styled.a`
+  color: #FF5722;
+  font-weight: 700;
+  font-size: 15px;
+  text-decoration: none;
+  padding: 10px 16px;
+  border-radius: 12px;
+  border: 1.5px solid #FF5722;
+  margin-top: 4px;
+  text-align: center;
+  transition: background 0.15s ease;
+
+  &:hover {
+    background: rgba(255, 87, 34, 0.08);
+  }
 `;
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const theme = useTheme();
+
   return (
-    <Nav>
-      <NavbarContainer>
-        <NavLogo to="/">
-          <ColorText>&lt;</ColorText>Vihidun
-          <div style={{ color: theme.primary }}>/</div>Flyca
-          <ColorText>&gt;</ColorText>
-        </NavLogo>
+    <NavOuter>
+      <Pill>
+        <NavLink href="#About">Home</NavLink>
+        <NavLink href="#Experience">Experience</NavLink>
+        <NavLink href="#Education">Education</NavLink>
+        <RouterNavLink to="/stories">Stories</RouterNavLink>
+      </Pill>
 
+      <MobileRow>
+        <MobileLogo>
+          Vihidun<MobileLogoAccent>.</MobileLogoAccent>
+        </MobileLogo>
         <MobileIcon onClick={() => setIsOpen(!isOpen)}>
-          <MenuRounded style={{ color: "inherit" }} />
+          {isOpen
+            ? <CloseRounded style={{ fontSize: 20 }} />
+            : <MenuRounded style={{ fontSize: 20 }} />
+          }
         </MobileIcon>
+      </MobileRow>
 
-        <NavItems>
-          <NavLink href="#About">About</NavLink>
-          <NavLink href="#Skills">Skills</NavLink>
-          <NavLink href="#Experience">Experience</NavLink>
-          <NavLink href="#Projects">Projects</NavLink>
-          <NavLink href="#Education">Education</NavLink>
-        </NavItems>
-
-        {isOpen && (
-          <MobileMenu isOpen={isOpen}>
-            <NavLink onClick={() => setIsOpen(!isOpen)} href="#About">
-              About
-            </NavLink>
-            <NavLink onClick={() => setIsOpen(!isOpen)} href="#Skills">
-              Skills
-            </NavLink>
-            <NavLink onClick={() => setIsOpen(!isOpen)} href="#Experience">
-              Experience
-            </NavLink>
-            <NavLink onClick={() => setIsOpen(!isOpen)} href="#Projects">
-              Projects
-            </NavLink>
-            <NavLink onClick={() => setIsOpen(!isOpen)} href="#Education">
-              Education
-            </NavLink>
-            <GithubButton
-              href={Bio.github}
-              target="_Blank"
-              style={{
-                background: theme.primary,
-                color: theme.text_primary,
-              }}
-            >
-              Github Profile
-            </GithubButton>
-          </MobileMenu>
-        )}
-
-        <ButtonContainer>
-          <GithubButton href={Bio.resume} target="_Blank">
-            Check Resume
-          </GithubButton>
-        </ButtonContainer>
-      </NavbarContainer>
-    </Nav>
+      {isOpen && (
+        <MobileMenu>
+          <MobileNavLink href="#About" onClick={() => setIsOpen(false)}>Home</MobileNavLink>
+          <MobileNavLink href="#Experience" onClick={() => setIsOpen(false)}>Experience</MobileNavLink>
+          <MobileNavLink href="#Education" onClick={() => setIsOpen(false)}>Education</MobileNavLink>
+          <RouterMobileNavLink to="/stories" onClick={() => setIsOpen(false)}>Stories</RouterMobileNavLink>
+          <ResumeLink href={Bio.resume} target="_blank" onClick={() => setIsOpen(false)}>
+            View Resume ↗
+          </ResumeLink>
+        </MobileMenu>
+      )}
+    </NavOuter>
   );
 };
 

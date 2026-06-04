@@ -1,13 +1,9 @@
 export const Bio = {
-  name: "Tharoosha Vihidun",
+  name: "Vihidun",
   roles: [
-    "Backend Engineer",
-    "Data Scientist",
-    "ML Engineer",
-    "Programmer",
+    "Software Engineer"
   ],
-  description:
-    "I am a self-directed and motivated personality who works effectively in a dynamic environment. With a strong foundation in both software engineering and data science, I thrive on solving real-world problems and creating technology that empowers businesses and users alike.",
+  description: "",
   github: "https://github.com/tharoosha",
   resume:
     "https://drive.google.com/file/d/1xOox4b8IbuIunX4HdIzCFzsAcdygxZDb/view?usp=drive_link",
@@ -301,6 +297,36 @@ export const skills = [
 export const experiences = [
   {
     id: 0,
+    img: "https://media.licdn.com/dms/image/v2/D560BAQFHt9AOKQ1X8w/company-logo_200_200/company-logo_200_200/0/1730260448003/99xio_logo?e=2147483647&v=beta&t=--IFGC9VNy5IG0LSoi0-nRC77spIVHjWlJrspvgEtgc",
+    role: "Software Engineer",
+    company: "99x.io",
+    date: "July 2025 - Present",
+    desc: "Working as a Software Engineer at 99x.io, contributing to product engineering initiatives using the Microsoft technology stack. Involved in building and maintaining scalable software solutions with .NET and Aurelia on Azure cloud infrastructure, collaborating within agile teams to deliver high-quality software products.",
+    skills: [
+      ".NET",
+      "Aurelia",
+      "Azure",
+      "Microsoft"
+    ],
+  },
+  {
+    id: 1,
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRE7TToIuaBtDhfAOq3HeQKpilGgVvqs-rp7Q&s",
+    role: "Software Engineer & Researcher",
+    company: "Donely AI",
+    date: "April 2025 - Sep 2025",
+    desc: "Contributed as a Software Engineer and Researcher to design and develop the first phase of a computer-use multi-agent platform that natively operates on desktop environments. The platform leverages agentic AI to autonomously interact with installed applications and web browsers on behalf of users — executing real-world tasks through human-like computer interaction. Worked on agent orchestration, task planning pipelines, and system-level integration to enable seamless end-to-end automation across diverse software environments.",
+    skills: [
+      "LangGraph",
+      "LangChain",
+      "Computer Use Agents",
+      "Python",
+      "Electron",
+      "AWS"
+    ],
+  },
+  {
+    id: 2,
     img: "https://media.licdn.com/dms/image/v2/C560BAQE9-4bSDMJ8mg/company-logo_200_200/company-logo_200_200/0/1631153821451/axiatadigitallabsatthelab_logo?e=2147483647&v=beta&t=xaotu-W9_bphCTJwBy2k14yevsOh47mvXnpVWR5dAQc",
     role: "Data Science Intern",
     company: "Axiata Digital Labs",
@@ -318,7 +344,7 @@ export const experiences = [
     // doc: "https://firebasestorage.googleapis.com/v0/b/flexi-coding.appspot.com/o/Screenshot%20from%202024-01-25%2022-38-31.png?alt=media&token=2785903f-1a4e-41f5-afd2-6adcfe56d058",
   },
   {
-    id: 1,
+    id: 3,
     img: "https://avatars.githubusercontent.com/u/168341676?s=280&v=4",
     role: "Backend & ML Engineer Freelance",
     company: "WeYora (Pvt)Ltd",
@@ -404,8 +430,8 @@ export const education = [
     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQB94CkjZvDkNJrit3zvXXkDAoWGrvlr1sNHw&s",
     school: "University of Moratuwa, Sri Lanka",
     date: "Jul 2021 - Jul 2025",
-    grade: " CGPA 3.62/4.00 (eligible for second upper)",
-    desc: "I am currently pursuing a Bachelor's degree in Computer Science and Engineering at the University of Moratuwa, with a specialization in Data Science and Engineering and a minor in Mathematics. My coursework covers a wide range of topics, including Data Visualization, Data Science, Advanced Data Structures, Database Internals, Big Data Analytics, and more. This solid foundation allows me to approach complex problems with a combination of analytical rigor and technical expertise, preparing me for the evolving world of technology and data.",
+    grade: " GPA 3.48/4.00 (Second Upper)",
+    desc: "I completed Bachelor's degree in Computer Science and Engineering at the University of Moratuwa, with a specialization in Data Science and Engineering.",
     degree: "BSc Eng Hons, Computer Science & Engineering specializing in Data Science and Engineering",
   },
   {
@@ -413,7 +439,7 @@ export const education = [
     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQtV4vBYDJFaCAw30-aupjjcnPeiMbHMC1uw&s",
     school: "Central Collage Anuradhapura, Sri Lanka",
     date: "2016 - 2019",
-    grade: " 3A's, DR-13, IR-443",
+    grade: " 3A's",
     desc: "I completed advance level education at Central Collage Anuradhapura, Sri Lanka, where I studied Mathematics, Physics, & Chemistry.",
     degree: "General Certificate of Education (Advance Level)",
   },
@@ -422,247 +448,247 @@ export const education = [
     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQtV4vBYDJFaCAw30-aupjjcnPeiMbHMC1uw&s",
     school: "Central Collage Anuradhapura, Sri Lanka",
     date: "2006 - 2016",
-    grade: " 9A's, DR-2",
+    grade: " 9A's",
     desc: "I completed my ordinary education at Central Collage Anuradhapura, Sri Lanka, where I studied Science, Mathematics, Information Technology and other 6 modules.",
     degree: "General Certificate of Education (Ordinary Level)",
   },
 ];
 
-export const projects = [
-  {
-    id: 11,
-    title: "LAAI - Learner Aware AI Agent",
-    date: "May 2024 - Present",
-    description:
-      "Final year research project developing personalized tutoring agent with adaptive learning and student modelling to boost student engagement in MOOCs (Massive open online courses) and online learning through Socratic tutoring and knowledge tracing, utilizing open-source PLMs and the Agentic framework.",
-    image:
-      "https://i.pinimg.com/736x/61/8a/22/618a22732758af6cb12c43283b689e72.jpg",
-    tags: [
-      "Python", "Pytorch", "Gemini", "CrewAI", "React", "FastAPI", "SQLite",
-    ],
-    category: "machine learning",
-    github: "https://github.com/Learn-Aware/learnaware-ai.git",
-    // webapp: "https://decisionhub.netlify.app/",
-    member: [
-      {
-        name: "Pasindu Malshan Keerthichandra",
-        img: "https://media.licdn.com/dms/image/v2/D5603AQFHsAjwVbxWDA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1727458680750?e=1742428800&v=beta&t=DWH-pF8RxMWpxQbtpE_6_7xxroNdUj3J7_nSq693ZhY",
-        // linkedin: "https://www.linkedin.com/in/rishav-chanda-b89a791b3/",
-        // github: "https://github.com/malshanCS",
-      },
-      {
-        name: "Shanuka Lakshan",
-        img: "https://media.licdn.com/dms/image/v2/D5635AQElNVTdp2xWDA/profile-framedphoto-shrink_800_800/profile-framedphoto-shrink_800_800/0/1734505237716?e=1737309600&v=beta&t=Ud9sj0Qk7Wj04K8S2ZdpzE-MLa8EHn2weaPgSdVfwX4",
-        // linkedin: "https://www.linkedin.com/in/upasana-chaudhuri-2a2bb5231/",
-        // github: "https://github.com/upasana0710",
-      },
-    ],
-  },
-  {
-    id: 9,
-    title: "Reflex - Next Generation Shopping Platform with Custobots",
-    date: "Dec 2024 - Present",
-    description:
-      "Next-Generation E-Commerce Application powered by Agentic AI, featuring a recommendation system, data analysis (time series, correlation analysis, predictive modeling), shopping agent, payment agent, and more.",
-    image:
-      "https://raw.githubusercontent.com/tharoosha/Reflex/refs/heads/main/Screenshot%202025-01-12%20at%2010.38.49%E2%80%AFPM.png",
-    tags: [
-      "Python", "ReactNative", "PhiData", "CrewAI", "Weaviate",
-    ],
-    category: "machine learning",
-    github: "https://github.com/tharoosha/Reflex.git",
-    // webapp: "https://trackify-management.netlify.app/",
-    member: [
-      {
-        name: "Imalsha Puneregedara",
-        img: "https://media.licdn.com/dms/image/v2/D5603AQGEWElbkrgOhA/profile-displayphoto-shrink_400_400/B56ZOuqDHoG8Ag-/0/1733802079260?e=1742428800&v=beta&t=f1IY1TPRo6WVrfjQHHS2jt2KJcXylHF0PQFyH4N0mEM",
-        // linkedin: "https://www.linkedin.com/in/rishav-chanda-b89a791b3/",
-        // github: "https://github.com/malshanCS",
-      },
-      {
-        name: "Indunil Umayanga",
-        img: "https://media.licdn.com/dms/image/v2/D5635AQHV_prrvsxWmA/profile-framedphoto-shrink_400_400/profile-framedphoto-shrink_400_400/0/1718261527439?e=1737309600&v=beta&t=AonlNi4x5FswhEjsu1ZOjcyhhrpQsfOeqGv3jBl4uqg",
-        // linkedin: "https://www.linkedin.com/in/upasana-chaudhuri-2a2bb5231/",
-        // github: "https://github.com/upasana0710",
-      },
-      {
-        name: "Sheshan Premathilaka",
-        img: "https://media.licdn.com/dms/image/v2/C5603AQHbn73lE8DDKw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1663517175311?e=1742428800&v=beta&t=uf0rPN-XxIve6vJTU5Q-Xw3Ul3HhmvE0yGcYQdDrdaI",
-        // linkedin: "https://www.linkedin.com/in/upasana-chaudhuri-2a2bb5231/",
-        // github: "https://github.com/upasana0710",
-      },
-      {
-        name: "Shehan Premathilaka",
-        img: "https://media.licdn.com/dms/image/v2/D5603AQHRSHE5AtqHvw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1663512681611?e=1742428800&v=beta&t=G3L3hUojvW5r9VX0-D5bG4IHf-g3lNycLvzp9skXSJY",
-        // linkedin: "https://www.linkedin.com/in/upasana-chaudhuri-2a2bb5231/",
-        // github: "https://github.com/upasana0710",
-      },
-    ],
-  },
-  // {
-  //   id: 0,
-  //   title: "Podstream",
-  //   date: "Apr 2023 - May 2023",
-  //   description:
-  //     "Developed a full-stack web application that allows users to search for, play, and pause their favorite podcasts on demand and create podcasts. Implemented user authentication using Google Auth and Jwt Auth, made responsive user interface with React JS that provides users with a seamless experience across all devices. Practiced agile methodologies to optimize team efficiency and communication.",
-  //   image:
-  //     "https://user-images.githubusercontent.com/64485885/234602896-a1bd8bcc-b72b-4821-83d6-8ad885bf435e.png",
-  //   tags: ["React Js", "MongoDb", "Node Js", "Express Js", "Redux"],
-  //   category: "web app",
-  //   github: "https://github.com/rishavchanda/Podstream",
-  //   webapp: "https://podstream.netlify.app/",
-  //   member: [
-  //     {
-  //       name: "Rishav Chanda",
-  //       img: "https://avatars.githubusercontent.com/u/64485885?v=4",
-  //       linkedin: "https://www.linkedin.com/in/rishav-chanda-b89a791b3/",
-  //       github: "https://github.com/rishavchanda/",
-  //     },
-  //     {
-  //       name: "Upasana Chaudhuri",
-  //       img: "https://avatars.githubusercontent.com/u/100614635?v=4",
-  //       linkedin: "https://www.linkedin.com/in/upasana-chaudhuri-2a2bb5231/",
-  //       github: "https://github.com/upasana0710",
-  //     },
-  //   ],
-  // },
-  // {
-  //   id: 1,
-  //   title: "Vexa",
-  //   date: "Oct 2022 - Jan 2023",
-  //   description:
-  //     "Designed and developed the Vexa project, a project management app that helps users and teams stay organized and on track. Implemented key features such as task tracking, team collaboration, and time tracking to improve productivity and project outcomes and also invite team/project members. The plan is to add a community of users where they can find developers and other team members and chat system implementation.",
-  //   image:
-  //     "https://user-images.githubusercontent.com/64485885/234916413-96296f13-fe4b-4cc4-b215-e72bd7c27928.png",
-  //   tags: [
-  //     "React Js",
-  //     "MongoDb",
-  //     "Node Js",
-  //     "Express Js",
-  //     "Redux",
-  //     "NodeMailer",
-  //   ],
-  //   category: "web app",
-  //   github: "https://github.com/rishavchanda/Project-Management-App",
-  //   webapp: "https://vexa-app.netlify.app/",
-  // },
-  // {
-  //   id: 2,
-  //   title: "Brain Tumor Detection",
-  //   date: "Jan 2023 - Mar 2023",
-  //   description:
-  //     "Preprocessed and augmented the dataset to improve model accuracy, trained the model, created API using model and Python, and used React web app for the project's front end. Achievements: Achieved an accuracy of 99.2% to accurately detect brain tumors from medical images.",
-  //   image:
-  //     "https://github.com/rishavchanda/Brain-Tumor-Detection/raw/main/Readme_resource/Image2.png",
-  //   tags: ["Python", "Keras", "TensorFlow", "VGG16", "Pickle", "React"],
-  //   category: "machine learning",
-  //   github: "https://github.com/rishavchanda/Brain-Tumor-Detection",
-  //   webapp: "https://brain-tumor.netlify.app/",
-  //   member: [
-  //     {
-  //       name: "Rishav Chanda",
-  //       img: "https://avatars.githubusercontent.com/u/64485885?v=4",
-  //       linkedin: "https://www.linkedin.com/in/rishav-chanda-b89a791b3/",
-  //       github: "https://github.com/rishavchanda/",
-  //     },
-  //     {
-  //       name: "Upasana Chaudhuri",
-  //       img: "https://avatars.githubusercontent.com/u/100614635?v=4",
-  //       linkedin: "https://www.linkedin.com/in/upasana-chaudhuri-2a2bb5231/",
-  //       github: "https://github.com/upasana0710",
-  //     },
-  //   ],
-  // },
-  // {
-  //   id: 3,
-  //   title: "Buckoid",
-  //   date: "Dec 2021 - Apr 2022",
-  //   description:
-  //     "App Is Currently In Playstore 100+ Downloads. This Project proposes an “Expense Tracking App”. Keep track of your personal expenses and compare them to your monthly income with the budget planner. It has Google Drive Cloud API for Backup of User Room Database. Made with Kotlin in MVVM Architecture & Live Data.",
-  //   image:
-  //     "https://camo.githubusercontent.com/3ad28aa710d18525f1fc87de056ed53c706d09979589bfd5a773df36653bad38/68747470733a2f2f666972656261736573746f726167652e676f6f676c65617069732e636f6d2f76302f622f6c6f67696e2d65613565322e61707073706f742e636f6d2f6f2f4255434b4f49442532302831292e706e673f616c743d6d6564696126746f6b656e3d32653735376235372d323964372d346263612d613562322d653164346538313432373435",
-  //   tags: ["Kotlin", "MVVM", "Room Database", "Google Drive Cloud API"],
-  //   category: "android app",
-  //   github: "https://github.com/rishavchanda/Buckoid-Android-App",
-  //   webapp: "https://play.google.com/store/apps/details?id=com.rishav.buckoid",
-  // },
-  // {
-  //   id: 10,
-  //   title: "Job Finding App",
-  //   date: "Jun 2023 - Jul 2023",
-  //   description:
-  //     "A Job Finding App made with React Native, Axios. Users can search for any job coming from API and apply there.",
-  //   image:
-  //     "https://user-images.githubusercontent.com/64485885/255237090-cf798a2c-1b41-4bb7-b904-b5353a1f08e8.png",
-  //   tags: ["React Native", "JavaScript", "Axios"],
-  //   category: "android app",
-  //   github: "https://github.com/rishavchanda/Job-finder-App",
-  //   webapp: "https://github.com/rishavchanda/Job-finder-App",
-  // },
-  // {
-  //   id: 4,
-  //   title: "Whatsapp Clone",
-  //   date: "Jul 2021",
-  //   description:
-  //     "A WhatsApp clone made with React JS, Firebase, and Material UI. It has Phone Authentication, Real-time Database. It has a chat room where users can chat with each other. It has a sidebar where users can see all the chat rooms and can create a new chat room. It has a login page where users can log in with their Google account.",
-  //   image:
-  //     "https://firebasestorage.googleapis.com/v0/b/whatsapp-clone-rishav.appspot.com/o/Screenshot%20(151).png?alt=media&token=48391593-1ef0-4a8c-a92a-eb82bdf38e89",
-  //   tags: ["React Js", "Firebase", "Firestore", "Node JS"],
-  //   category: "web app",
-  //   github: "https://github.com/rishavchanda/Whatsapp-Clone-React-Js",
-  //   webapp: "https://whatsapp-clone-rishav.web.app",
-  // },
-  // {
-  //   id: 5,
-  //   title: "Todo Web App",
-  //   date: "Jun 2021",
-  //   description:
-  //     " A Todo Web App made with React JS, Redux, and Material UI. It has a login page where users can log in with their Google account. It has a sidebar where users can see all the tasks and can create a new task. It has a calendar where users can see all the tasks on a particular date. It has a search bar where users can search for a particular task.",
-  //   image:
-  //     "https://camo.githubusercontent.com/84ac6ab6f378348ef28d8184062b7e9e3511a1252ae3966eaa49e8e998f732a7/68747470733a2f2f666972656261736573746f726167652e676f6f676c65617069732e636f6d2f76302f622f746f646f2d6170702d63386331392e61707073706f742e636f6d2f6f2f53637265656e73686f74253230283938292e706e673f616c743d6d6564696126746f6b656e3d33643335646366322d626666322d343730382d393031632d343232383866383332386633",
-  //   tags: ["React Js", "Local Storage", "AWS Auth", "Node JS"],
-  //   category: "web app",
-  //   github: "https://github.com/rishavchanda/Todo-Web-App",
-  //   webapp: "https://rishav-react-todo.netlify.app/",
-  // },
-  // {
-  //   id: 6,
-  //   title: "Breaking Bad",
-  //   date: "Jun 2021",
-  //   description:
-  //     "A simple react app that shows the characters of the famous TV series Breaking Bad. It uses the Breaking Bad API to fetch the data. It also has a search bar to search for a particular character.",
-  //   image:
-  //     "https://camo.githubusercontent.com/937774368308a82419f53dd6eeb4a8675780e119636488b4e3cfe5d34859a72a/68747470733a2f2f666972656261736573746f726167652e676f6f676c65617069732e636f6d2f76302f622f746f646f2d6170702d63386331392e61707073706f742e636f6d2f6f2f53637265656e73686f7425323028313534292e706e673f616c743d6d6564696126746f6b656e3d65613439383630632d303435362d343333342d616435372d336239346663303333363263",
-  //   tags: ["React Js", "API", "Axios", "Node JS"],
-  //   category: "web app",
-  //   github: "https://github.com/rishavchanda/Breaking-Bad",
-  //   webapp: "https://breaking-bad-webapp.netlify.app",
-  // },
-  // {
-  //   id: 7,
-  //   title: "Quiz App",
-  //   date: "Dec 2020 - Jan 2021",
-  //   description:
-  //     "A android quiz app made with Java and Firebase. It has a login page where users can log in with their Google account. It has a sidebar where users can see all the quiz categories and can create a new quiz. It has a leaderboard where users can see the top 10 scorers. It has a search bar where users can search for a particular quiz.",
-  //   image:
-  //     "https://github-production-user-asset-6210df.s3.amazonaws.com/64485885/239726262-c1b061d1-d9d0-42ef-9f1c-0412d14bc4f6.gif",
-  //   tags: ["Java", "Android Studio", "Firebase", "Google Auth"],
-  //   category: "android app",
-  //   github: "https://github.com/rishavchanda/Quiz-Earn",
-  //   webapp: "https://github.com/rishavchanda/Quiz-Earn",
-  // },
-  // {
-  //   id: 8,
-  //   title: "Face Recognition",
-  //   date: "Jan 2021",
-  //   description:
-  //     "A Face recognition python app made with OpenCV. It uses face_recognition library to detect faces. It uses the webcam to detect faces. It also has a search bar to search for a particular face.",
-  //   image:
-  //     "https://dontrepeatyourself.org/media/face-recognition-with-python-dlib-and-deep-learning_cezKZBj.png",
-  //   tags: ["Python", "Keras", "TensorFlow", "VGG16", "Pickle", "React"],
-  //   category: "machine learning",
-  //   github: "https://github.com/rishavchanda/Face-Recodnition-AI-with-Python",
-  //   webapp: "https://github.com/rishavchanda/Face-Recodnition-AI-with-Python",
-  // },
-];
+// export const projects = [
+//   {
+//     id: 11,
+//     title: "LAAI - Learner Aware AI Agent",
+//     date: "May 2024 - Present",
+//     description:
+//       "Final year research project developing personalized tutoring agent with adaptive learning and student modelling to boost student engagement in MOOCs (Massive open online courses) and online learning through Socratic tutoring and knowledge tracing, utilizing open-source PLMs and the Agentic framework.",
+//     image:
+//       "https://i.pinimg.com/736x/61/8a/22/618a22732758af6cb12c43283b689e72.jpg",
+//     tags: [
+//       "Python", "Pytorch", "Gemini", "CrewAI", "React", "FastAPI", "SQLite",
+//     ],
+//     category: "machine learning",
+//     github: "https://github.com/Learn-Aware/learnaware-ai.git",
+//     // webapp: "https://decisionhub.netlify.app/",
+//     member: [
+//       {
+//         name: "Pasindu Malshan Keerthichandra",
+//         img: "https://media.licdn.com/dms/image/v2/D5603AQFHsAjwVbxWDA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1727458680750?e=1742428800&v=beta&t=DWH-pF8RxMWpxQbtpE_6_7xxroNdUj3J7_nSq693ZhY",
+//         // linkedin: "https://www.linkedin.com/in/rishav-chanda-b89a791b3/",
+//         // github: "https://github.com/malshanCS",
+//       },
+//       {
+//         name: "Shanuka Lakshan",
+//         img: "https://media.licdn.com/dms/image/v2/D5635AQElNVTdp2xWDA/profile-framedphoto-shrink_800_800/profile-framedphoto-shrink_800_800/0/1734505237716?e=1737309600&v=beta&t=Ud9sj0Qk7Wj04K8S2ZdpzE-MLa8EHn2weaPgSdVfwX4",
+//         // linkedin: "https://www.linkedin.com/in/upasana-chaudhuri-2a2bb5231/",
+//         // github: "https://github.com/upasana0710",
+//       },
+//     ],
+//   },
+//   {
+//     id: 9,
+//     title: "Reflex - Next Generation Shopping Platform with Custobots",
+//     date: "Dec 2024 - Present",
+//     description:
+//       "Next-Generation E-Commerce Application powered by Agentic AI, featuring a recommendation system, data analysis (time series, correlation analysis, predictive modeling), shopping agent, payment agent, and more.",
+//     image:
+//       "https://raw.githubusercontent.com/tharoosha/Reflex/refs/heads/main/Screenshot%202025-01-12%20at%2010.38.49%E2%80%AFPM.png",
+//     tags: [
+//       "Python", "ReactNative", "PhiData", "CrewAI", "Weaviate",
+//     ],
+//     category: "machine learning",
+//     github: "https://github.com/tharoosha/Reflex.git",
+//     // webapp: "https://trackify-management.netlify.app/",
+//     member: [
+//       {
+//         name: "Imalsha Puneregedara",
+//         img: "https://media.licdn.com/dms/image/v2/D5603AQGEWElbkrgOhA/profile-displayphoto-shrink_400_400/B56ZOuqDHoG8Ag-/0/1733802079260?e=1742428800&v=beta&t=f1IY1TPRo6WVrfjQHHS2jt2KJcXylHF0PQFyH4N0mEM",
+//         // linkedin: "https://www.linkedin.com/in/rishav-chanda-b89a791b3/",
+//         // github: "https://github.com/malshanCS",
+//       },
+//       {
+//         name: "Indunil Umayanga",
+//         img: "https://media.licdn.com/dms/image/v2/D5635AQHV_prrvsxWmA/profile-framedphoto-shrink_400_400/profile-framedphoto-shrink_400_400/0/1718261527439?e=1737309600&v=beta&t=AonlNi4x5FswhEjsu1ZOjcyhhrpQsfOeqGv3jBl4uqg",
+//         // linkedin: "https://www.linkedin.com/in/upasana-chaudhuri-2a2bb5231/",
+//         // github: "https://github.com/upasana0710",
+//       },
+//       {
+//         name: "Sheshan Premathilaka",
+//         img: "https://media.licdn.com/dms/image/v2/C5603AQHbn73lE8DDKw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1663517175311?e=1742428800&v=beta&t=uf0rPN-XxIve6vJTU5Q-Xw3Ul3HhmvE0yGcYQdDrdaI",
+//         // linkedin: "https://www.linkedin.com/in/upasana-chaudhuri-2a2bb5231/",
+//         // github: "https://github.com/upasana0710",
+//       },
+//       {
+//         name: "Shehan Premathilaka",
+//         img: "https://media.licdn.com/dms/image/v2/D5603AQHRSHE5AtqHvw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1663512681611?e=1742428800&v=beta&t=G3L3hUojvW5r9VX0-D5bG4IHf-g3lNycLvzp9skXSJY",
+//         // linkedin: "https://www.linkedin.com/in/upasana-chaudhuri-2a2bb5231/",
+//         // github: "https://github.com/upasana0710",
+//       },
+//     ],
+//   },
+//   // {
+//   //   id: 0,
+//   //   title: "Podstream",
+//   //   date: "Apr 2023 - May 2023",
+//   //   description:
+//   //     "Developed a full-stack web application that allows users to search for, play, and pause their favorite podcasts on demand and create podcasts. Implemented user authentication using Google Auth and Jwt Auth, made responsive user interface with React JS that provides users with a seamless experience across all devices. Practiced agile methodologies to optimize team efficiency and communication.",
+//   //   image:
+//   //     "https://user-images.githubusercontent.com/64485885/234602896-a1bd8bcc-b72b-4821-83d6-8ad885bf435e.png",
+//   //   tags: ["React Js", "MongoDb", "Node Js", "Express Js", "Redux"],
+//   //   category: "web app",
+//   //   github: "https://github.com/rishavchanda/Podstream",
+//   //   webapp: "https://podstream.netlify.app/",
+//   //   member: [
+//   //     {
+//   //       name: "Rishav Chanda",
+//   //       img: "https://avatars.githubusercontent.com/u/64485885?v=4",
+//   //       linkedin: "https://www.linkedin.com/in/rishav-chanda-b89a791b3/",
+//   //       github: "https://github.com/rishavchanda/",
+//   //     },
+//   //     {
+//   //       name: "Upasana Chaudhuri",
+//   //       img: "https://avatars.githubusercontent.com/u/100614635?v=4",
+//   //       linkedin: "https://www.linkedin.com/in/upasana-chaudhuri-2a2bb5231/",
+//   //       github: "https://github.com/upasana0710",
+//   //     },
+//   //   ],
+//   // },
+//   // {
+//   //   id: 1,
+//   //   title: "Vexa",
+//   //   date: "Oct 2022 - Jan 2023",
+//   //   description:
+//   //     "Designed and developed the Vexa project, a project management app that helps users and teams stay organized and on track. Implemented key features such as task tracking, team collaboration, and time tracking to improve productivity and project outcomes and also invite team/project members. The plan is to add a community of users where they can find developers and other team members and chat system implementation.",
+//   //   image:
+//   //     "https://user-images.githubusercontent.com/64485885/234916413-96296f13-fe4b-4cc4-b215-e72bd7c27928.png",
+//   //   tags: [
+//   //     "React Js",
+//   //     "MongoDb",
+//   //     "Node Js",
+//   //     "Express Js",
+//   //     "Redux",
+//   //     "NodeMailer",
+//   //   ],
+//   //   category: "web app",
+//   //   github: "https://github.com/rishavchanda/Project-Management-App",
+//   //   webapp: "https://vexa-app.netlify.app/",
+//   // },
+//   // {
+//   //   id: 2,
+//   //   title: "Brain Tumor Detection",
+//   //   date: "Jan 2023 - Mar 2023",
+//   //   description:
+//   //     "Preprocessed and augmented the dataset to improve model accuracy, trained the model, created API using model and Python, and used React web app for the project's front end. Achievements: Achieved an accuracy of 99.2% to accurately detect brain tumors from medical images.",
+//   //   image:
+//   //     "https://github.com/rishavchanda/Brain-Tumor-Detection/raw/main/Readme_resource/Image2.png",
+//   //   tags: ["Python", "Keras", "TensorFlow", "VGG16", "Pickle", "React"],
+//   //   category: "machine learning",
+//   //   github: "https://github.com/rishavchanda/Brain-Tumor-Detection",
+//   //   webapp: "https://brain-tumor.netlify.app/",
+//   //   member: [
+//   //     {
+//   //       name: "Rishav Chanda",
+//   //       img: "https://avatars.githubusercontent.com/u/64485885?v=4",
+//   //       linkedin: "https://www.linkedin.com/in/rishav-chanda-b89a791b3/",
+//   //       github: "https://github.com/rishavchanda/",
+//   //     },
+//   //     {
+//   //       name: "Upasana Chaudhuri",
+//   //       img: "https://avatars.githubusercontent.com/u/100614635?v=4",
+//   //       linkedin: "https://www.linkedin.com/in/upasana-chaudhuri-2a2bb5231/",
+//   //       github: "https://github.com/upasana0710",
+//   //     },
+//   //   ],
+//   // },
+//   // {
+//   //   id: 3,
+//   //   title: "Buckoid",
+//   //   date: "Dec 2021 - Apr 2022",
+//   //   description:
+//   //     "App Is Currently In Playstore 100+ Downloads. This Project proposes an “Expense Tracking App”. Keep track of your personal expenses and compare them to your monthly income with the budget planner. It has Google Drive Cloud API for Backup of User Room Database. Made with Kotlin in MVVM Architecture & Live Data.",
+//   //   image:
+//   //     "https://camo.githubusercontent.com/3ad28aa710d18525f1fc87de056ed53c706d09979589bfd5a773df36653bad38/68747470733a2f2f666972656261736573746f726167652e676f6f676c65617069732e636f6d2f76302f622f6c6f67696e2d65613565322e61707073706f742e636f6d2f6f2f4255434b4f49442532302831292e706e673f616c743d6d6564696126746f6b656e3d32653735376235372d323964372d346263612d613562322d653164346538313432373435",
+//   //   tags: ["Kotlin", "MVVM", "Room Database", "Google Drive Cloud API"],
+//   //   category: "android app",
+//   //   github: "https://github.com/rishavchanda/Buckoid-Android-App",
+//   //   webapp: "https://play.google.com/store/apps/details?id=com.rishav.buckoid",
+//   // },
+//   // {
+//   //   id: 10,
+//   //   title: "Job Finding App",
+//   //   date: "Jun 2023 - Jul 2023",
+//   //   description:
+//   //     "A Job Finding App made with React Native, Axios. Users can search for any job coming from API and apply there.",
+//   //   image:
+//   //     "https://user-images.githubusercontent.com/64485885/255237090-cf798a2c-1b41-4bb7-b904-b5353a1f08e8.png",
+//   //   tags: ["React Native", "JavaScript", "Axios"],
+//   //   category: "android app",
+//   //   github: "https://github.com/rishavchanda/Job-finder-App",
+//   //   webapp: "https://github.com/rishavchanda/Job-finder-App",
+//   // },
+//   // {
+//   //   id: 4,
+//   //   title: "Whatsapp Clone",
+//   //   date: "Jul 2021",
+//   //   description:
+//   //     "A WhatsApp clone made with React JS, Firebase, and Material UI. It has Phone Authentication, Real-time Database. It has a chat room where users can chat with each other. It has a sidebar where users can see all the chat rooms and can create a new chat room. It has a login page where users can log in with their Google account.",
+//   //   image:
+//   //     "https://firebasestorage.googleapis.com/v0/b/whatsapp-clone-rishav.appspot.com/o/Screenshot%20(151).png?alt=media&token=48391593-1ef0-4a8c-a92a-eb82bdf38e89",
+//   //   tags: ["React Js", "Firebase", "Firestore", "Node JS"],
+//   //   category: "web app",
+//   //   github: "https://github.com/rishavchanda/Whatsapp-Clone-React-Js",
+//   //   webapp: "https://whatsapp-clone-rishav.web.app",
+//   // },
+//   // {
+//   //   id: 5,
+//   //   title: "Todo Web App",
+//   //   date: "Jun 2021",
+//   //   description:
+//   //     " A Todo Web App made with React JS, Redux, and Material UI. It has a login page where users can log in with their Google account. It has a sidebar where users can see all the tasks and can create a new task. It has a calendar where users can see all the tasks on a particular date. It has a search bar where users can search for a particular task.",
+//   //   image:
+//   //     "https://camo.githubusercontent.com/84ac6ab6f378348ef28d8184062b7e9e3511a1252ae3966eaa49e8e998f732a7/68747470733a2f2f666972656261736573746f726167652e676f6f676c65617069732e636f6d2f76302f622f746f646f2d6170702d63386331392e61707073706f742e636f6d2f6f2f53637265656e73686f74253230283938292e706e673f616c743d6d6564696126746f6b656e3d33643335646366322d626666322d343730382d393031632d343232383866383332386633",
+//   //   tags: ["React Js", "Local Storage", "AWS Auth", "Node JS"],
+//   //   category: "web app",
+//   //   github: "https://github.com/rishavchanda/Todo-Web-App",
+//   //   webapp: "https://rishav-react-todo.netlify.app/",
+//   // },
+//   // {
+//   //   id: 6,
+//   //   title: "Breaking Bad",
+//   //   date: "Jun 2021",
+//   //   description:
+//   //     "A simple react app that shows the characters of the famous TV series Breaking Bad. It uses the Breaking Bad API to fetch the data. It also has a search bar to search for a particular character.",
+//   //   image:
+//   //     "https://camo.githubusercontent.com/937774368308a82419f53dd6eeb4a8675780e119636488b4e3cfe5d34859a72a/68747470733a2f2f666972656261736573746f726167652e676f6f676c65617069732e636f6d2f76302f622f746f646f2d6170702d63386331392e61707073706f742e636f6d2f6f2f53637265656e73686f7425323028313534292e706e673f616c743d6d6564696126746f6b656e3d65613439383630632d303435362d343333342d616435372d336239346663303333363263",
+//   //   tags: ["React Js", "API", "Axios", "Node JS"],
+//   //   category: "web app",
+//   //   github: "https://github.com/rishavchanda/Breaking-Bad",
+//   //   webapp: "https://breaking-bad-webapp.netlify.app",
+//   // },
+//   // {
+//   //   id: 7,
+//   //   title: "Quiz App",
+//   //   date: "Dec 2020 - Jan 2021",
+//   //   description:
+//   //     "A android quiz app made with Java and Firebase. It has a login page where users can log in with their Google account. It has a sidebar where users can see all the quiz categories and can create a new quiz. It has a leaderboard where users can see the top 10 scorers. It has a search bar where users can search for a particular quiz.",
+//   //   image:
+//   //     "https://github-production-user-asset-6210df.s3.amazonaws.com/64485885/239726262-c1b061d1-d9d0-42ef-9f1c-0412d14bc4f6.gif",
+//   //   tags: ["Java", "Android Studio", "Firebase", "Google Auth"],
+//   //   category: "android app",
+//   //   github: "https://github.com/rishavchanda/Quiz-Earn",
+//   //   webapp: "https://github.com/rishavchanda/Quiz-Earn",
+//   // },
+//   // {
+//   //   id: 8,
+//   //   title: "Face Recognition",
+//   //   date: "Jan 2021",
+//   //   description:
+//   //     "A Face recognition python app made with OpenCV. It uses face_recognition library to detect faces. It uses the webcam to detect faces. It also has a search bar to search for a particular face.",
+//   //   image:
+//   //     "https://dontrepeatyourself.org/media/face-recognition-with-python-dlib-and-deep-learning_cezKZBj.png",
+//   //   tags: ["Python", "Keras", "TensorFlow", "VGG16", "Pickle", "React"],
+//   //   category: "machine learning",
+//   //   github: "https://github.com/rishavchanda/Face-Recodnition-AI-with-Python",
+//   //   webapp: "https://github.com/rishavchanda/Face-Recodnition-AI-with-Python",
+//   // },
+// ];
 

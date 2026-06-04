@@ -1,15 +1,15 @@
 import React from "react";
 import styled from "styled-components";
 import { Bio } from "../../data/constants";
-import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import InstagramIcon from "@mui/icons-material/Instagram";
 import GitHubIcon from "@mui/icons-material/GitHub";
-import  MediumIcon  from "../../images/Medium Icon.svg";
+import MediumIcon from "../../images/Medium Icon.svg";
+
 const FooterContainer = styled.div`
   width: 100%;
-  padding: 2rem 0;
+  background: #111111;
+  padding: 48px 0 28px;
   display: flex;
   justify-content: center;
   position: relative;
@@ -21,67 +21,80 @@ const FooterWrapper = styled.div`
   max-width: 1200px;
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 20px;
   align-items: center;
-  padding: 1rem;
-  color: ${({ theme }) => theme.text_primary};
+  padding: 0 24px;
 `;
 
 const Logo = styled.div`
-  font-weight: 600;
-  font-size: 20px;
-  color: ${({ theme }) => theme.primary};
+  font-weight: 700;
+  font-size: 22px;
+  color: #ffffff;
+  letter-spacing: -0.5px;
+`;
+
+const LogoAccent = styled.span`
+  color: #FF5722;
 `;
 
 const Nav = styled.nav`
   width: 100%;
   max-width: 800px;
-  margin-top: 0.5rem;
   display: flex;
   flex-direction: row;
   gap: 2rem;
   justify-content: center;
+
   @media (max-width: 768px) {
     flex-wrap: wrap;
     gap: 1rem;
-    justify-content: center;
     text-align: center;
-    font-size: 12px;
   }
 `;
 
 const NavLink = styled.a`
-  color: ${({ theme }) => theme.text_primary};
+  color: #9e9e9e;
   text-decoration: none;
-  font-size: 1.2rem;
+  font-size: 14px;
+  font-weight: 500;
   transition: color 0.2s ease-in-out;
   &:hover {
-    color: ${({ theme }) => theme.primary};
-  }
-  @media (max-width: 768px) {
-    font-size: 1rem;
+    color: #FF5722;
   }
 `;
 
 const SocialMediaIcons = styled.div`
   display: flex;
-  margin-top: 1rem;
+  gap: 8px;
+  margin-top: 4px;
 `;
+
 const SocialMediaIcon = styled.a`
-  display: inline-block;
-  margin: 0 1rem;
-  font-size: 1.5rem;
-  color: ${({ theme }) => theme.text_primary};
-  transition: color 0.2s ease-in-out;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid #2a2a2a;
+  color: #9e9e9e;
+  transition: all 0.2s ease-in-out;
   &:hover {
-    color: ${({ theme }) => theme.primary};
+    border-color: #FF5722;
+    color: #FF5722;
   }
 `;
 
+const Divider = styled.div`
+  width: 100%;
+  height: 1px;
+  background: #2a2a2a;
+  margin: 8px 0;
+`;
+
 const Copyright = styled.p`
-  margin-top: 1.5rem;
-  font-size: 0.9rem;
-  color: ${({ theme }) => theme.soft2};
+  font-size: 13px;
+  color: #555555;
   text-align: center;
 `;
 
@@ -89,7 +102,9 @@ const Footer = () => {
   return (
     <FooterContainer>
       <FooterWrapper>
-        <Logo>Tharoosha Vihidun</Logo>
+        <Logo>
+          Vihidun<LogoAccent>.</LogoAccent>
+        </Logo>
         <Nav>
           <NavLink href="#About">About</NavLink>
           <NavLink href="#Skills">Skills</NavLink>
@@ -98,21 +113,21 @@ const Footer = () => {
           <NavLink href="#Education">Education</NavLink>
         </Nav>
         <SocialMediaIcons>
-                <SocialMediaIcon href={Bio.github} target="display">
-                  <GitHubIcon />
-                </SocialMediaIcon>
-                <SocialMediaIcon href={Bio.twitter} target="display">
-                  <TwitterIcon />
-                </SocialMediaIcon>
-                <SocialMediaIcon href={Bio.linkedin} target="display">
-                  <LinkedInIcon />
-                </SocialMediaIcon>
-                <SocialMediaIcon href={Bio.medium} target="display">
-                  <img src={MediumIcon} alt="" style={{ width: '28px', height: 'auto' }} />
-                  {/* <MediumIcon /> */}
-                </SocialMediaIcon>
-              </SocialMediaIcons>
-        <Copyright>&copy; 2024 Tharoosha Vihidun. All rights reserved.</Copyright>
+          <SocialMediaIcon href={Bio.github} target="_blank">
+            <GitHubIcon style={{ fontSize: 18 }} />
+          </SocialMediaIcon>
+          <SocialMediaIcon href={Bio.twitter} target="_blank">
+            <TwitterIcon style={{ fontSize: 18 }} />
+          </SocialMediaIcon>
+          <SocialMediaIcon href={Bio.linkedin} target="_blank">
+            <LinkedInIcon style={{ fontSize: 18 }} />
+          </SocialMediaIcon>
+          <SocialMediaIcon href={Bio.medium} target="_blank">
+            <img src={MediumIcon} alt="Medium" style={{ width: "18px", height: "auto", filter: "brightness(0) saturate(100%) invert(63%) sepia(0%) hue-rotate(0deg)" }} />
+          </SocialMediaIcon>
+        </SocialMediaIcons>
+        <Divider />
+        <Copyright>&copy; 2024 Vihidun Pathiranage. All rights reserved.</Copyright>
       </FooterWrapper>
     </FooterContainer>
   );
