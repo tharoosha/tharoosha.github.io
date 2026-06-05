@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { Bio } from "../data/constants";
 import { MenuRounded, CloseRounded } from "@mui/icons-material";
 
 const NavOuter = styled.div`
@@ -119,22 +118,6 @@ const mobileNavLinkStyles = `
 const MobileNavLink = styled.a`${mobileNavLinkStyles}`;
 const RouterMobileNavLink = styled(Link)`${mobileNavLinkStyles}`;
 
-const ResumeLink = styled.a`
-  color: #FF5722;
-  font-weight: 700;
-  font-size: 15px;
-  text-decoration: none;
-  padding: 10px 16px;
-  border-radius: 12px;
-  border: 1.5px solid #FF5722;
-  margin-top: 4px;
-  text-align: center;
-  transition: background 0.15s ease;
-
-  &:hover {
-    background: rgba(255, 87, 34, 0.08);
-  }
-`;
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -166,9 +149,6 @@ const Navbar = () => {
           <MobileNavLink href="#Experience" onClick={() => setIsOpen(false)}>Experience</MobileNavLink>
           <MobileNavLink href="#Education" onClick={() => setIsOpen(false)}>Education</MobileNavLink>
           <RouterMobileNavLink to="/stories" onClick={() => setIsOpen(false)}>Stories</RouterMobileNavLink>
-          <ResumeLink href={Bio.resume} target="_blank" onClick={() => setIsOpen(false)}>
-            View Resume ↗
-          </ResumeLink>
         </MobileMenu>
       )}
     </NavOuter>
