@@ -99,12 +99,18 @@ const ArticleSubtitle = styled.p`
 const Meta = styled.div`
   display: flex;
   align-items: center;
-  gap: 12px;
+  flex-wrap: wrap;
+  gap: 8px;
   font-size: 13px;
   color: #999999;
   padding-bottom: 32px;
   border-bottom: 1px solid #e4e0d8;
   margin-bottom: 40px;
+
+  @media (max-width: 768px) {
+    font-size: 11px;
+    gap: 6px;
+  }
 `;
 
 const Divider = styled.span`

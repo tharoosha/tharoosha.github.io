@@ -125,9 +125,9 @@ const Navbar = () => {
   return (
     <NavOuter>
       <Pill>
-        <NavLink href="#About">Home</NavLink>
-        <NavLink href="#Experience">Experience</NavLink>
-        <NavLink href="#Education">Education</NavLink>
+        <NavLink href="/#About">Home</NavLink>
+        <NavLink href="/#Experience">Experience</NavLink>
+        <NavLink href="/#Education">Education</NavLink>
         <RouterNavLink to="/stories">Stories</RouterNavLink>
       </Pill>
 
@@ -145,9 +145,9 @@ const Navbar = () => {
 
       {isOpen && (
         <MobileMenu>
-          <MobileNavLink href="#About" onClick={() => setIsOpen(false)}>Home</MobileNavLink>
-          <MobileNavLink href="#Experience" onClick={() => setIsOpen(false)}>Experience</MobileNavLink>
-          <MobileNavLink href="#Education" onClick={() => setIsOpen(false)}>Education</MobileNavLink>
+          <MobileNavLink href="/#About" onClick={() => setIsOpen(false)}>Home</MobileNavLink>
+          <MobileNavLink href="/#Experience" onClick={() => setIsOpen(false)}>Experience</MobileNavLink>
+          <MobileNavLink href="/#Education" onClick={() => setIsOpen(false)}>Education</MobileNavLink>
           <RouterMobileNavLink to="/stories" onClick={() => setIsOpen(false)}>Stories</RouterMobileNavLink>
         </MobileMenu>
       )}
