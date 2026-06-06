@@ -48,6 +48,7 @@ const CoverImage = styled.img`
   width: 100%;
   height: 420px;
   object-fit: cover;
+  object-position: ${({ $position }) => $position || "center"};
   display: block;
 
   @media (max-width: 768px) {
@@ -295,7 +296,7 @@ const StoryPage = () => {
       </TopBar>
 
       {story.coverImage && (
-        <CoverImage src={story.coverImage} alt={story.title} />
+        <CoverImage src={story.coverImage} alt={story.title} $position={story.coverImagePosition} />
       )}
 
       <ContentArea>

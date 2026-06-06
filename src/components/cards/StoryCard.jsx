@@ -24,6 +24,7 @@ const Cover = styled.img`
   width: 100%;
   height: 190px;
   object-fit: cover;
+  object-position: ${({ $position }) => $position || "center"};
   background: #f0ede7;
   display: block;
 `;
@@ -99,7 +100,7 @@ const StoryCard = ({ story, onClick }) => {
   return (
     <Card onClick={onClick}>
       {story.coverImage && (
-        <Cover src={story.coverImage} alt={story.title} />
+        <Cover src={story.coverImage} alt={story.title} $position={story.coverImagePosition} />
       )}
       <Body>
         <CategoryTag>{story.category}</CategoryTag>

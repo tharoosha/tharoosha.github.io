@@ -1,61 +1,291 @@
 export const stories = [
+//   {
+//     id: 3,
+//     slug: "ironman-colombo-swim-training-plan",
+//     title: "Journal #2 — My 7-Month Swim Training Plan for IRONMAN Colombo",
+//     subtitle:
+//       "I can swim. Kind of. Here's the structured plan I'm following to get from 'surviving the pool' to open-water ready by December.",
+//     date: "2026-06-06",
+//     category: "IRONMAN",
+//     coverImage:
+//       "https://images.unsplash.com/photo-1530549387789-4c1017266635?w=1200&auto=format&fit=crop",
+//     tags: ["IRONMAN", "Swimming", "Training"],
+//     source: "local",
+//     content: `
+// ## Where I'm Starting From
+
+// Let me be honest — I'm not a swimmer. I can get from one end of the pool to the other without drowning, but that's about where my confidence ends. No real technique, no structured breathing, no idea what "sighting" means in open water. The IRONMAN swim is 1.9km in open water, and right now that sounds like a completely different planet.
+
+// So before anything else, I needed a plan. Not a vague "swim more often" plan, but a real, week-by-week structure that takes me from where I am to where I need to be.
+
+// Here's what I built.
+
+// ---
+
+// ## The Structure
+
+// I'm training twice a week in the pool — **Tuesdays and Saturdays**, two hours each session. That's the commitment for the next seven months. Every month has a clear theme and progression, and every session has a purpose.
+
+// ---
+
+// ## Month 1 — June: Learning to Breathe
+
+// This is the foundation month. Most beginner swimmers struggle not because of fitness but because of breathing — the moment you put your face in the water, panic takes over. So June is about fixing that.
+
+// **Tuesday sessions:**
+// - Warm-up: 4 × 50m easy freestyle + 4 × 50m kickboard
+// - Breathing drills: 6 × 50m side kicking — one goggle in the water, exhaling continuously (this one is brutal at first)
+// - Main set: 10 × 50m freestyle with 30 sec rest
+// - Endurance: 4 × 100m with 45 sec rest
+// - Cool-down: 200m easy
+
+// **Saturday sessions:**
+// - Warm-up: 400m
+// - Main set: 8 × 100m with 30–45 sec rest + 800m total
+// - Milestone targets: 100m nonstop, then 200m nonstop
+// - Cool-down: 200m easy
+
+// The goal by end of June isn't distance — it's comfort. If I can do 200m without stopping and without losing my breathing, June is a success.
+
+// ---
+
+// ## Month 2 — July: Building Rhythm
+
+// July is where the structure starts to resemble actual swim training. Sessions become more consistent between Tuesday and Saturday, and continuous distance starts to grow.
+
+// **Tuesday:** 300m warm-up → 300m drills → 8 × 100m → 1 × 300m continuous → 200m cool-down
+
+// **Saturday:** 300m warm-up → 5 × 200m → 1 × 500m continuous → 200m cool-down
+
+// That 500m continuous on Saturday is the milestone. If I can do 500m without stopping in July, the next phase opens up.
+
+// ---
+
+// ## Months 3 & 4 — August–September: The 1000m Goal
+
+// This is where it gets real. The target for these two months is **1000m nonstop**. That's the psychological barrier — once you cross it, the rest feels achievable.
+
+// **Tuesday:** Drills → 5 × 200m → 1 × 800m continuous
+
+// **Saturday:** 3 × 400m → 1 × 1000m continuous
+
+// I'll repeat this block across both August and September. If I hit 1000m in August, September is about making it feel easy. Consistency over distance.
+
+// ---
+
+// ## Months 5 & 6 — October–November: Race-Distance Prep
+
+// By October I should be comfortable with 1000m. Now it's time to close the gap to 1.9km.
+
+// **Tuesday:** 4 × 500m
+
+// **Saturday:** 1500–2000m continuous
+
+// The Saturday session in November — 2000m continuous — is effectively the full race swim distance with a bit of buffer. If I can do that in the pool, open water starts to feel possible.
+
+// ---
+
+// ## Month 7 — December: Open Water
+
+// Pool swimming and open water swimming are not the same sport. In a race, there are no lane lines, no walls to rest on, no black line to follow at the bottom. People swim over you. You have to navigate.
+
+// December training shifts entirely to open-water specific skills:
+// - **Swimming straight** without lane lines
+// - **Sighting** — lifting your head every 6–8 strokes to spot the buoy ahead
+// - **Turning around buoys** — tighter and faster than you'd think
+// - **Contact swimming** — getting used to people around you, bumping into you, swimming over your legs
+
+// This month is as much mental training as physical. Open water has a completely different energy. The goal is to not get to race day and have the swim be a shock.
+
+// ---
+
+// ## Why I'm Sharing This
+
+// Partly to keep myself accountable — when it's written down and published, skipping a Tuesday session feels harder to justify. But also because I couldn't find many honest accounts of what beginner-to-IRONMAN swim training actually looks like week by week. Most content is written by people who were already good swimmers.
+
+// I'm not. And that's fine. The plan is designed for that reality.
+
+// More updates coming as the months go on. If June is a disaster, you'll hear about it.
+// `,
+//   },
   {
-    id: 1,
-    slug: "computer-use-agents-future-of-ai",
-    title: "Computer-Use Agents: The Next Frontier of AI Automation",
+    id: 2,
+    slug: "ironman-colombo-the-beginning",
+    title: "Journal #1 — Planning to Sign Up for IRONMAN Colombo",
     subtitle:
-      "How multi-agent systems that natively operate desktop environments are reshaping the way we think about human-computer interaction.",
-    date: "2025-06-01",
-    category: "Technology",
+      "What is IRONMAN, how it started, what the race actually looks like, and why I'm seriously considering doing this.",
+    date: "2026-06-01",
+    category: "IRONMAN",
     coverImage:
-      "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&auto=format&fit=crop",
-    tags: ["AI", "Multi-Agent", "Automation"],
+      "https://instagram.fcmb12-1.fna.fbcdn.net/v/t51.82787-15/607642522_17867455005548777_7403406257729777275_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=102&ig_cache_key=Mzc5ODgzNjEyOTU1NTA5MzQ4Mw%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTA4MC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=ib4JmI8VEX8Q7kNvwF_cHuO&_nc_oc=AdrJwKdyJgyqt5tPc49lqpRfflfgZ6S7JxJkXIXTFxYxg66bIQbnn7TCy80QXjYfdzpUyzJIQ8zG6pE5PnstSVrQ&_nc_ad=z-m&_nc_cid=1017&_nc_zt=23&_nc_ht=instagram.fcmb12-1.fna&_nc_gid=EACS_dsHmcrAnZXrrcKEOQ&_nc_ss=7a22e&oh=00_Af_qJuvniYnp1tAVFwU-ZzBf0jDXds_KVG1-udK-BXZC8Q&oe=6A296A20",
+    coverImagePosition: "top",
+    tags: ["IRONMAN", "Triathlon", "Colombo"],
     source: "local",
     content: `
-## The Rise of Computer-Use AI
+## A Stupid Idea That Won't Go Away
 
-For decades, automation meant scripting — writing rigid instructions that broke the moment anything changed on screen. Computer-use agents change that entirely. They see the screen like a human does, reason about what's there, and interact with any application without needing an API.
+I haven't registered yet. But I've been thinking about IRONMAN 70.3 Colombo for a while now, and the thought won't leave. Every time I talk myself out of it, something pulls me back. So instead of keep going back and forth in my head, I'm writing this down — to understand what I'm actually considering, and whether I'm serious enough to follow through.
 
-Working on the first phase of such a platform at Donely, I got a front-row seat to just how transformative — and how hard — this shift really is.
+This journal is the start of that process.
 
-## What Makes It Different
+---
 
-Traditional RPA (Robotic Process Automation) tools work by hooking into application internals: reading DOM elements, calling APIs, injecting keystrokes at known coordinates. It's brittle. One UI update breaks the whole pipeline.
+## Where IRONMAN Came From
 
-Computer-use agents instead:
+The story of IRONMAN starts in Hawaii, in 1978, and it starts with an argument.
 
-- **See** the interface via screenshots or screen capture
-- **Reason** about what UI elements mean, in context
-- **Act** by generating natural mouse and keyboard actions
+A Navy Commander named John Collins was at an awards ceremony after a running race. The conversation turned into a debate about which athletes were the fittest — swimmers, cyclists, or runners. Collins had a simple way to settle it: combine all three into a single race, back to back, with no break. Whoever finishes is the IRONMAN.
 
-The result is an agent that can navigate a browser, fill a form, switch apps, and complete multi-step workflows — just as a human would.
+He took three existing endurance events held in Hawaii and stitched them together:
 
-## The Hard Parts
+- **The Waikiki Rough Water Swim** — 3.86km in open ocean
+- **The Around-Oahu Bike Race** — 185km around the island
+- **The Honolulu Marathon** — 42.2km
 
-Building this is not just "plug in an LLM." The real challenges are:
+Fifteen athletes showed up to the first race. Twelve finished. Gordon Haller crossed the line first, in just under 12 hours. He became the world's first IRONMAN.
 
-**Latency** — Every step requires a screenshot, a model inference, and an action. That round-trip adds up fast.
+The race note Collins handed out that day ended with a line that became legendary: *"Swim 2.4 miles, bike 112 miles, run 26.2 miles — brag for the rest of your life."*
 
-**Grounding** — The model must reliably translate "click the Submit button" into the right pixel coordinates, even across different screen sizes and themes.
+That was 1978. Today, IRONMAN is a global organisation running races across six continents, with tens of thousands of athletes competing every year. The World Championship is still held in Kona, Hawaii, on the same stretch of ocean and road where it all started.
 
-**Error recovery** — When something goes wrong (popup appeared, page loaded slowly), the agent needs to detect it and recover without human intervention.
+---
 
-**Context window** — Long multi-step tasks eat through context fast. You need smart memory and summarization strategies.
+## The Full IRONMAN vs. IRONMAN 70.3
 
-## What We Built
+There are two main distances in the IRONMAN world.
 
-At Donely, the first phase focused on proving the core loop: capture → reason → act → verify. We built:
+**Full IRONMAN:**
+- 3.86km swim
+- 180km bike
+- 42.2km run (full marathon)
+- Time limit: 17 hours
 
-- A screen capture pipeline that feeds compressed images to the model
-- An action executor that translates model output to real OS-level events
-- A task planner that breaks user goals into verifiable sub-steps
-- A recovery layer that detects unexpected states and retries intelligently
+**IRONMAN 70.3 (Half IRONMAN):**
+- 1.9km swim
+- 90km bike
+- 21.1km run (half marathon)
+- Time limit: 8.5 hours
 
-## Where This Goes
+The "70.3" is the total race distance in miles. It's called the Half IRONMAN because it's exactly half of every distance in the full race.
 
-We're still in early days. But the trajectory is clear — just as the web browser democratized information access, computer-use agents will democratize *task execution*. Anything you can do on a computer, an agent will eventually do on your behalf, more reliably and at scale.
+Both events cross the same finish line. You hear the same announcement: *"You are an IRONMAN."* The difference is that the 70.3 is where most people start — and plenty of experienced athletes race nothing but 70.3 their entire career. It's not a consolation prize. It's a serious race in its own right, and finishing one in under 6 hours puts you well ahead of the average field.
 
-The question isn't *if* — it's *how fast*.
+IRONMAN Colombo is a 70.3 event. That's the one I'm looking at.
+
+---
+
+## What Race Day Actually Looks Like
+
+A triathlon isn't just swim, then bike, then run. There are two transition phases built in — and they're a genuine part of the race strategy.
+
+### The Swim
+
+The race starts in open water. At most IRONMAN 70.3 events, athletes enter the water in waves — groups sorted by age and gender going off every few minutes. The water is full of people. You will be bumped, grabbed, and swum over. Especially in the first 200 metres, it's controlled chaos.
+
+The swim course is marked by buoys. You have to sight — lifting your head every few strokes to spot the next buoy and make sure you're swimming straight. Drift even 10% off course and you've added unnecessary distance to a 1.9km swim.
+
+### T1 — Transition 1: Swim to Bike
+
+After the swim, athletes run into the transition area — a huge rack of bikes and gear bags. You strip off your wetsuit (at bigger races, volunteers called "wetsuit strippers" literally help you peel it off while you're still moving), grab your bike gear — helmet, sunglasses, cycling shoes — and head out onto the bike course.
+
+T1 time counts. Elite athletes do it in under two minutes. For beginners, five to eight minutes is normal. The transition area can have thousands of bikes, so you need to know exactly where yours is racked.
+
+### The Bike
+
+The 90km bike leg is the longest part of the race and where most of your time is spent. Athletes ride road bikes or time trial bikes. Drafting (riding in someone else's slipstream) is not allowed in IRONMAN — you must keep a set distance from the rider ahead. Penalties for drafting can add five or ten minutes to your race time.
+
+Nutrition on the bike is critical. You're burning through energy fast, and there's still a half marathon waiting at the end. Most experienced triathletes eat and drink on the bike — gels, bars, electrolyte drinks — and have a plan before they even start pedalling.
+
+### T2 — Transition 2: Bike to Run
+
+Back into the transition area. Rack the bike, swap cycling shoes for running shoes, grab your race number belt, hat, any nutrition, and go. T2 is typically faster than T1 — no wetsuit to deal with. Two to four minutes is normal.
+
+### The Run
+
+The final 21.1km. By this point in the race, your legs have been through a lot. The first few kilometres off the bike often feel terrible — your body is adjusting from the cycling position, and the legs feel heavy and foreign. Most athletes call this "brick legs" and say it fades after 10–15 minutes.
+
+The run course is usually loops, which means crowds and support throughout. It also means every lap you pass the finish line area before you're actually done — a special kind of mental test.
+
+---
+
+## Why Colombo?
+
+Sri Lanka. My home country. Once I found out IRONMAN Colombo was a real event, it felt like the obvious answer.
+
+There's something different about racing at home — the crowd is familiar, the roads are roads you know, and there's a weight to doing it in the place that shaped you. The Colombo course takes athletes through the city and along the coast. It's not a scenic mountain race. It's hot, urban, and loud, and somehow that makes it feel more honest.
+
+I also want this to mean something to people who know me. Finishing an IRONMAN anywhere is impressive. Finishing one in Colombo — in front of people from Sri Lanka — is a different kind of story.
+
+---
+
+## Where I Am Right Now
+
+I haven't registered. I'm still at the "seriously thinking about it" stage. But thinking about it without doing anything felt like the same loop I've been in for too long — so I started training. Specifically, I started building my swim base, because the swim is the part that scares me most. You can walk during a run. You can stop on a bike. In open water, stopping isn't really an option.
+
+If I'm going to commit to this, I need to know I can handle the swim. That's where the work starts.
+
+I'll write more as the training develops. If I eventually register, you'll hear about it. If the whole thing falls apart, you'll hear about that too.
+
+Next up: the swim training plan.
 `,
   },
+//   {
+//     id: 1,
+//     slug: "computer-use-agents-future-of-ai",
+//     title: "Computer-Use Agents: The Next Frontier of AI Automation",
+//     subtitle:
+//       "How multi-agent systems that natively operate desktop environments are reshaping the way we think about human-computer interaction.",
+//     date: "2025-06-01",
+//     category: "Technology",
+//     coverImage:
+//       "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&auto=format&fit=crop",
+//     tags: ["AI", "Multi-Agent", "Automation"],
+//     source: "local",
+//     content: `
+// ## The Rise of Computer-Use AI
+
+// For decades, automation meant scripting — writing rigid instructions that broke the moment anything changed on screen. Computer-use agents change that entirely. They see the screen like a human does, reason about what's there, and interact with any application without needing an API.
+
+// Working on the first phase of such a platform at Donely, I got a front-row seat to just how transformative — and how hard — this shift really is.
+
+// ## What Makes It Different
+
+// Traditional RPA (Robotic Process Automation) tools work by hooking into application internals: reading DOM elements, calling APIs, injecting keystrokes at known coordinates. It's brittle. One UI update breaks the whole pipeline.
+
+// Computer-use agents instead:
+
+// - **See** the interface via screenshots or screen capture
+// - **Reason** about what UI elements mean, in context
+// - **Act** by generating natural mouse and keyboard actions
+
+// The result is an agent that can navigate a browser, fill a form, switch apps, and complete multi-step workflows — just as a human would.
+
+// ## The Hard Parts
+
+// Building this is not just "plug in an LLM." The real challenges are:
+
+// **Latency** — Every step requires a screenshot, a model inference, and an action. That round-trip adds up fast.
+
+// **Grounding** — The model must reliably translate "click the Submit button" into the right pixel coordinates, even across different screen sizes and themes.
+
+// **Error recovery** — When something goes wrong (popup appeared, page loaded slowly), the agent needs to detect it and recover without human intervention.
+
+// **Context window** — Long multi-step tasks eat through context fast. You need smart memory and summarization strategies.
+
+// ## What We Built
+
+// At Donely, the first phase focused on proving the core loop: capture → reason → act → verify. We built:
+
+// - A screen capture pipeline that feeds compressed images to the model
+// - An action executor that translates model output to real OS-level events
+// - A task planner that breaks user goals into verifiable sub-steps
+// - A recovery layer that detects unexpected states and retries intelligently
+
+// ## Where This Goes
+
+// We're still in early days. But the trajectory is clear — just as the web browser democratized information access, computer-use agents will democratize *task execution*. Anything you can do on a computer, an agent will eventually do on your behalf, more reliably and at scale.
+
+// The question isn't *if* — it's *how fast*.
+// `,
+//   },
 ];
