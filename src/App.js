@@ -16,12 +16,14 @@ import StoryPage from "./components/pages/StoryPage";
 const ScrollToHash = () => {
   const { hash, pathname } = useLocation();
   useEffect(() => {
-    if (!hash) return;
+    if (!hash) {
+      window.scrollTo(0, 0);
+      return;
+    }
     const el = document.querySelector(hash);
     if (el) {
       el.scrollIntoView({ behavior: "smooth" });
     } else {
-      // Element not yet rendered — wait for layout
       const timer = setTimeout(() => {
         document.querySelector(hash)?.scrollIntoView({ behavior: "smooth" });
       }, 100);
