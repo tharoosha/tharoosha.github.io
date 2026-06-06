@@ -227,6 +227,15 @@ If I'm going to commit to this, I need to know I can handle the swim. That's whe
 I'll write more as the training develops. If I eventually register, you'll hear about it. If the whole thing falls apart, you'll hear about that too.
 
 Next up: the swim training plan.
+
+---
+
+## Useful Links
+
+If you're curious about IRONMAN 70.3 Colombo, here are the two places worth bookmarking:
+
+- [IRONMAN 70.3 Colombo — Official Race Page](https://www.ironman.com/races/im703-colombo) — registration, course maps, race info
+- [IRONMAN 70.3 Colombo — Instagram](https://www.instagram.com/ironman70.3colombo/) — race updates and event coverage
 `,
   },
 //   {
