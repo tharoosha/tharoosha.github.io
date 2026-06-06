@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import styled from "styled-components";
 import { useParams, useNavigate } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
+import { Helmet } from "react-helmet-async";
 import { stories } from "../../data/stories";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 
@@ -287,8 +288,24 @@ const StoryPage = () => {
       day: "numeric",
     });
 
+  const pageUrl = `https://tharoosha.github.io/story/${story.slug}`;
+
   return (
     <Page>
+      <Helmet>
+        <title>{story.title} — Tharoosha Vihidun</title>
+        <meta name="description" content={story.subtitle} />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content={pageUrl} />
+        <meta property="og:title" content={story.title} />
+        <meta property="og:description" content={story.subtitle} />
+        {story.coverImage && <meta property="og:image" content={story.coverImage} />}
+        <meta property="og:site_name" content="Tharoosha Vihidun" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={story.title} />
+        <meta name="twitter:description" content={story.subtitle} />
+        {story.coverImage && <meta name="twitter:image" content={story.coverImage} />}
+      </Helmet>
       <TopBar>
         <BackBtn onClick={() => navigate(-1)}>
           <ArrowBackIcon style={{ fontSize: 18 }} /> Back

@@ -3,6 +3,7 @@ import { theme } from "./utils/Themes";
 import Navbar from "./components/Navbar";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { useEffect } from "react";
+import { HelmetProvider } from "react-helmet-async";
 import Hero from "./components/sections/Hero";
 import { AnimatePresence } from "framer-motion";
 import Education from "./components/sections/Education";
@@ -66,6 +67,7 @@ const StoriesLayout = () => (
 
 function App() {
   return (
+    <HelmetProvider>
     <ThemeProvider theme={theme}>
       <BrowserRouter>
         <ScrollToHash />
@@ -76,6 +78,7 @@ function App() {
         </Routes>
       </BrowserRouter>
     </ThemeProvider>
+    </HelmetProvider>
   );
 }
 
