@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { MenuRounded, CloseRounded } from "@mui/icons-material";
 
 const NavOuter = styled.div`
@@ -129,11 +129,23 @@ const RouterMobileNavLink = styled(Link)`${mobileNavLinkStyles}`;
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleHome = (e) => {
+    e.preventDefault();
+    if (location.pathname === "/") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      navigate("/");
+      window.scrollTo({ top: 0 });
+    }
+  };
 
   return (
     <NavOuter>
       <Pill>
-        <NavLink href="/#About">Home</NavLink>
+        <NavLink href="/" onClick={handleHome}>Home</NavLink>
         <NavLink href="/#Experience">Experience</NavLink>
         <NavLink href="/#Education">Education</NavLink>
         <RouterNavLink to="/stories">Stories</RouterNavLink>
@@ -153,7 +165,7 @@ const Navbar = () => {
 
       {isOpen && (
         <MobileMenu>
-          <MobileNavLink href="/#About" onClick={() => setIsOpen(false)}>Home</MobileNavLink>
+          <MobileNavLink href="/" onClick={(e) => { handleHome(e); setIsOpen(false); }}>Home</MobileNavLink>
           <MobileNavLink href="/#Experience" onClick={() => setIsOpen(false)}>Experience</MobileNavLink>
           <MobileNavLink href="/#Education" onClick={() => setIsOpen(false)}>Education</MobileNavLink>
           <RouterMobileNavLink to="/stories" onClick={() => setIsOpen(false)}>Stories</RouterMobileNavLink>

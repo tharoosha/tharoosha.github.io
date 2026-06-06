@@ -12,7 +12,7 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   background: ${({ theme }) => theme.bg};
-  padding: 80px 16px 100px;
+  padding: 35px 16px 100px;
 `;
 
 const Wrapper = styled.div`
