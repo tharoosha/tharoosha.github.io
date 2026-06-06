@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script>
+    // GitHub Pages SPA redirect: encode path as query param so index.html is served
+    var l = window.location;
+    l.replace(
+      l.protocol + '//' + l.host + '/?p=' +
+      l.pathname.replace(/^\//, '').replace(/&/g, '~and~') +
+      (l.search ? '&q=' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+      l.hash
+    );
+  </script>
+</head>
+<body></body>
+</html>
