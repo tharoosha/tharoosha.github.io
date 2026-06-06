@@ -74,6 +74,11 @@ const Stories = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    const extractImage = (html) => {
+      const match = html?.match(/<img[^>]+src="([^"]+)"/);
+      return match ? match[1] : null;
+    };
+
     fetch(RSS_API)
       .then((res) => res.json())
       .then((data) => {
@@ -84,7 +89,7 @@ const Stories = () => {
             subtitle: item.description?.replace(/<[^>]+>/g, "").slice(0, 160),
             date: item.pubDate,
             category: item.categories?.[0] || "Article",
-            coverImage: item.thumbnail,
+            coverImage: item.thumbnail || extractImage(item.content) || extractImage(item.description),
             source: "medium",
             link: item.link,
           }));

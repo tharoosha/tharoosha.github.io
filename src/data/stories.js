@@ -1,113 +1,90 @@
 export const stories = [
-//   {
-//     id: 3,
-//     slug: "ironman-colombo-swim-training-plan",
-//     title: "Journal #2 — My 7-Month Swim Training Plan for IRONMAN Colombo",
-//     subtitle:
-//       "I can swim. Kind of. Here's the structured plan I'm following to get from 'surviving the pool' to open-water ready by December.",
-//     date: "2026-06-06",
-//     category: "IRONMAN",
-//     coverImage:
-//       "https://images.unsplash.com/photo-1530549387789-4c1017266635?w=1200&auto=format&fit=crop",
-//     tags: ["IRONMAN", "Swimming", "Training"],
-//     source: "local",
-//     content: `
-// ## Where I'm Starting From
+  {
+    id: 3,
+    slug: "ironman-colombo-swim-training-plan",
+    title: "Journal #2 — Day 1 in the Pool",
+    subtitle:
+      "I swam as a kid — one length, 25 metres, with my arms. Today I got back in for the first time in years. Here's what happened.",
+    date: "2026-06-06",
+    category: "Zero to IRONMAN",
+    coverImage: "/swim-day1-kickboard.jpg",
+    coverImagePosition: "top",
+    tags: ["Zero to IRONMAN", "Swimming"],
+    source: "local",
+    content: `
+## Back in the Pool
 
-// Let me be honest — I'm not a swimmer. I can get from one end of the pool to the other without drowning, but that's about where my confidence ends. No real technique, no structured breathing, no idea what "sighting" means in open water. The IRONMAN swim is 1.9km in open water, and right now that sounds like a completely different planet.
+Today was the first proper session of IRONMAN swim training. And I'll be honest with you — it was humbling.
 
-// So before anything else, I needed a plan. Not a vague "swim more often" plan, but a real, week-by-week structure that takes me from where I am to where I need to be.
+As a kid and into my teens, around grade 10, 11, and even after grade 13, I could swim. One length, 25 metres, using my arms. That was the ceiling. A 50 metre pool was never possible even then. And that was a long time ago.
 
-// Here's what I built.
+Getting in today, the muscle memory I thought I had? Gone. The breathing rhythm? Nowhere. I couldn't do a proper kick and make it 25 metres in anything that resembles actual swimming.
 
-// ---
+That's where I'm starting from.
 
-// ## The Structure
+---
 
-// I'm training twice a week in the pool — **Tuesdays and Saturdays**, two hours each session. That's the commitment for the next seven months. Every month has a clear theme and progression, and every session has a purpose.
+## What Day 1 Looked Like
 
-// ---
+![Day 1 — kickboard, new goggles, first 25m done](/swim-day1-kickboard.jpg "right")
 
-// ## Month 1 — June: Learning to Breathe
+The plan for today was simple: don't try to do too much. Just get comfortable in the water again.
 
-// This is the foundation month. Most beginner swimmers struggle not because of fitness but because of breathing — the moment you put your face in the water, panic takes over. So June is about fixing that.
+I grabbed a kickboard and focused on two things — **breathing** and **kicking**. Float on the board, face down, exhale steadily into the water, breathe to the side. Kick. Stay horizontal. Try not to panic when the rhythm breaks.
 
-// **Tuesday sessions:**
-// - Warm-up: 4 × 50m easy freestyle + 4 × 50m kickboard
-// - Breathing drills: 6 × 50m side kicking — one goggle in the water, exhaling continuously (this one is brutal at first)
-// - Main set: 10 × 50m freestyle with 30 sec rest
-// - Endurance: 4 × 100m with 45 sec rest
-// - Cool-down: 200m easy
+The kickboard removes arm coordination entirely. You're just holding on, kicking, and learning to breathe. It sounds easy. It is not easy.
 
-// **Saturday sessions:**
-// - Warm-up: 400m
-// - Main set: 8 × 100m with 30–45 sec rest + 800m total
-// - Milestone targets: 100m nonstop, then 200m nonstop
-// - Cool-down: 200m easy
+By the end of the session I managed to kick the full 25 metres with the board. Not quickly, not cleanly — but I did it, and the breathing clicked a few times across those lengths.
 
-// The goal by end of June isn't distance — it's comfort. If I can do 200m without stopping and without losing my breathing, June is a success.
+**First day: quite successful.** Given where I started, that's enough.
 
-// ---
+---
 
-// ## Month 2 — July: Building Rhythm
+## New Kit
 
-// July is where the structure starts to resemble actual swim training. Sessions become more consistent between Tuesday and Saturday, and continuous distance starts to grow.
+Two things I sorted before getting in:
 
-// **Tuesday:** 300m warm-up → 300m drills → 8 × 100m → 1 × 300m continuous → 200m cool-down
+**Goggles** — My previous pair went missing somewhere. Rather than keep looking, I got a new pair. Comfortable, seals well, doesn't fog.
 
-// **Saturday:** 300m warm-up → 5 × 200m → 1 × 500m continuous → 200m cool-down
+**Sunscreen** — I didn't expect this to be a problem until I got a real sunburn after a session. Sun reflecting off water is brutal. I picked up **HELIOCARE 360 Gel Oil-Free** for now. Not ideal for swimming — it's not a water-resistant sport formula — but it's what I could get immediately, and something is better than nothing.
 
-// That 500m continuous on Saturday is the milestone. If I can do 500m without stopping in July, the next phase opens up.
+The proper solution is **Banana Boat Sport Ultra SPF 50+**, which is on the way. That's the one built for this: sweat-resistant, stays on in water, designed for outdoor sport. Once it arrives, that becomes the standard.
 
-// ---
+---
 
-// ## Months 3 & 4 — August–September: The 1000m Goal
+## What I Watched Before Getting In
 
-// This is where it gets real. The target for these two months is **1000m nonstop**. That's the psychological barrier — once you cross it, the rest feels achievable.
+Before day one, I came across this video by Taren — someone who started unable to swim properly and eventually set open water marathon records. It changed how I thought about everything.
 
-// **Tuesday:** Drills → 5 × 200m → 1 × 800m continuous
+[Watch on YouTube](https://www.youtube.com/watch?v=FncinCRbkAE)
 
-// **Saturday:** 3 × 400m → 1 × 1000m continuous
+The core argument is that most beginner swimmers — and most coaches — skip three fundamentals that need to come before any training plan or fitness work. I recognised myself in every single one.
 
-// I'll repeat this block across both August and September. If I hit 1000m in August, September is about making it feel easy. Consistency over distance.
+**1. Breathe out, not in — "breathing like a dolphin"**
 
-// ---
+The instinct when you put your face in water is to panic and gasp for air. But the real fix is the opposite: focus entirely on breathing *out* as forcefully as possible the entire time your face is in the water. The exhale clears the carbon dioxide that builds up in your lungs — it's the CO₂ that creates the desperate breathless feeling, not lack of oxygen. Less CO₂ also means less air trapped in your chest, so your upper body stops floating too high and dragging your legs down.
 
-// ## Months 5 & 6 — October–November: Race-Distance Prep
+The drill: shallow end, hands on the pool edge, face in the water, blow bubbles as hard as you can. Build from there — one hand, then kicking off the bottom, then turning to breathe. Simple. Harder than it sounds.
 
-// By October I should be comfortable with 1000m. Now it's time to close the gap to 1.9km.
+**2. Float in a straight line — "floating like a log"**
 
-// **Tuesday:** 4 × 500m
+A heavy log skims the surface effortlessly. A tangled branch with drag in every direction is nearly impossible to pull through water. Most beginners swim like the branch — bent at the hips, legs dragging, everything working against itself.
 
-// **Saturday:** 1500–2000m continuous
+The goal is to hold the body as one long flat unit: core engaged lightly, heels just kissing the surface, kick narrow as if your feet are inside an ice cream tub. Fins, a snorkel, and a kickboard help you feel what that position should be. You strip them away gradually as the body learns to hold it on its own.
 
-// The Saturday session in November — 2000m continuous — is effectively the full race swim distance with a bit of buffer. If I can do that in the pool, open water starts to feel possible.
+**3. Swim straight — "like an arrow"**
 
-// ---
+Most triathletes swim 20–30% further than necessary because they drift off course and overcorrect. The fix is in the arm entry — entering just outside the ear, palm facing down or back, staying in a clean channel in front of the shoulder. No crossing the centre line, no wide sweeping stroke. Dead straight, every time.
 
-// ## Month 7 — December: Open Water
+Pair that with sighting every five or six strokes in open water and you stop wasting distance you didn't need to swim.
 
-// Pool swimming and open water swimming are not the same sport. In a race, there are no lane lines, no walls to rest on, no black line to follow at the bottom. People swim over you. You have to navigate.
+---
 
-// December training shifts entirely to open-water specific skills:
-// - **Swimming straight** without lane lines
-// - **Sighting** — lifting your head every 6–8 strokes to spot the buoy ahead
-// - **Turning around buoys** — tighter and faster than you'd think
-// - **Contact swimming** — getting used to people around you, bumping into you, swimming over your legs
+All three of these went into how I'm approaching the first weeks. It's not about fitness yet — it's about building these foundations first. The full training plan is coming once I've put a few more sessions in and know what's actually working.
 
-// This month is as much mental training as physical. Open water has a completely different energy. The goal is to not get to race day and have the swim be a shock.
-
-// ---
-
-// ## Why I'm Sharing This
-
-// Partly to keep myself accountable — when it's written down and published, skipping a Tuesday session feels harder to justify. But also because I couldn't find many honest accounts of what beginner-to-IRONMAN swim training actually looks like week by week. Most content is written by people who were already good swimmers.
-
-// I'm not. And that's fine. The plan is designed for that reality.
-
-// More updates coming as the months go on. If June is a disaster, you'll hear about it.
-// `,
-//   },
+More updates soon.
+`,
+  },
   {
     id: 2,
     slug: "ironman-colombo-the-beginning",

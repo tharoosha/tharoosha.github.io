@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { MenuRounded, CloseRounded } from "@mui/icons-material";
 
 const NavOuter = styled.div`
-  background: #FAF8F4;
+  background: transparent;
   display: flex;
   justify-content: center;
   padding: 16px 24px;
@@ -14,8 +14,10 @@ const NavOuter = styled.div`
 `;
 
 const Pill = styled.nav`
-  background: #ffffff;
-  border: 1px solid #e8e4dc;
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.45);
   border-radius: 100px;
   padding: 0 32px;
   display: flex;
@@ -25,6 +27,7 @@ const Pill = styled.nav`
   gap: 8px;
   max-width: 680px;
   width: 100%;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
 
   @media (max-width: 768px) {
     display: none;
@@ -73,8 +76,10 @@ const MobileLogoAccent = styled.span`
 `;
 
 const MobileIcon = styled.button`
-  background: none;
-  border: 1px solid #e8e4dc;
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.45);
   border-radius: 50%;
   width: 40px;
   height: 40px;
@@ -83,6 +88,7 @@ const MobileIcon = styled.button`
   justify-content: center;
   cursor: pointer;
   color: #111111;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
 `;
 
 const MobileMenu = styled.div`
@@ -90,14 +96,16 @@ const MobileMenu = styled.div`
   top: 84px;
   left: 16px;
   right: 16px;
-  background: #ffffff;
-  border: 1px solid #e8e4dc;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
   border-radius: 20px;
   padding: 16px;
   display: flex;
   flex-direction: column;
   gap: 4px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
   z-index: 100;
 `;
 

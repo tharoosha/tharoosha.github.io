@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { useParams, useNavigate } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
@@ -123,6 +123,36 @@ const Divider = styled.span`
   display: inline-block;
 `;
 
+const FloatRight = styled.span`
+  float: right;
+  display: block;
+  width: 260px;
+  margin: 4px 0 20px 28px;
+
+  img {
+    width: 100%;
+    border-radius: 12px;
+    display: block;
+    margin: 0;
+    object-fit: cover;
+  }
+
+  span {
+    display: block;
+    font-size: 12px;
+    color: #999999;
+    text-align: center;
+    margin-top: 6px;
+    line-height: 1.4;
+  }
+
+  @media (max-width: 600px) {
+    float: none;
+    width: 100%;
+    margin: 0 0 20px 0;
+  }
+`;
+
 const MarkdownWrapper = styled.div`
   h1, h2, h3, h4 {
     font-weight: 700;
@@ -210,19 +240,103 @@ const MarkdownWrapper = styled.div`
   }
 `;
 
-const VideoEmbed = styled.div`
-  width: 100%;
-  margin: 24px 0;
+const BookmarkCard = styled.a`
+  display: flex;
+  align-items: stretch;
+  border: 1px solid #e4e0d8;
   border-radius: 12px;
   overflow: hidden;
+  text-decoration: none !important;
+  margin: 24px 0;
+  background: #ffffff;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 
-  iframe {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    border: none;
-    display: block;
+  &:hover {
+    border-color: #ff5722;
+    box-shadow: 0 4px 16px rgba(255, 87, 34, 0.08);
   }
 `;
+
+const BookmarkBody = styled.div`
+  flex: 1;
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+  min-width: 0;
+`;
+
+const BookmarkTitle = styled.div`
+  font-size: 15px;
+  font-weight: 600;
+  color: #111111;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+`;
+
+const BookmarkMeta = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: #999999;
+`;
+
+const BookmarkThumb = styled.div`
+  width: 180px;
+  flex-shrink: 0;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    margin: 0;
+    border-radius: 0;
+  }
+
+  @media (max-width: 480px) {
+    width: 110px;
+  }
+`;
+
+const YouTubeBookmark = ({ videoId, href }) => {
+  const [title, setTitle] = useState("Watch on YouTube");
+  const [author, setAuthor] = useState("");
+
+  useEffect(() => {
+    fetch(`https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=${videoId}&format=json`)
+      .then((r) => r.json())
+      .then((data) => {
+        if (data.title) setTitle(data.title);
+        if (data.author_name) setAuthor(data.author_name);
+      })
+      .catch(() => {});
+  }, [videoId]);
+
+  return (
+    <BookmarkCard href={href} target="_blank" rel="noopener noreferrer">
+      <BookmarkBody>
+        <BookmarkTitle>{title}</BookmarkTitle>
+        <BookmarkMeta>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="#ff0000">
+            <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.8 15.5V8.5l6.3 3.5-6.3 3.5z"/>
+          </svg>
+          {author && <span>{author}</span>}
+          {author && <span>·</span>}
+          <span>youtube.com</span>
+        </BookmarkMeta>
+      </BookmarkBody>
+      <BookmarkThumb>
+        <img src={`https://img.youtube.com/vi/${videoId}/mqdefault.jpg`} alt={title} />
+      </BookmarkThumb>
+    </BookmarkCard>
+  );
+};
 
 const NotFound = styled.div`
   display: flex;
@@ -236,20 +350,21 @@ const NotFound = styled.div`
 `;
 
 const customComponents = {
+  img({ src, alt, title }) {
+    if (title === "right") {
+      return (
+        <FloatRight>
+          <img src={src} alt={alt} />
+          {alt && <span>{alt}</span>}
+        </FloatRight>
+      );
+    }
+    return <img src={src} alt={alt} />;
+  },
   a({ href, children }) {
     const ytMatch = href?.match(YOUTUBE_REGEX);
     if (ytMatch) {
-      const videoId = ytMatch[1];
-      return (
-        <VideoEmbed>
-          <iframe
-            src={`https://www.youtube.com/embed/${videoId}`}
-            title="YouTube video"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          />
-        </VideoEmbed>
-      );
+      return <YouTubeBookmark videoId={ytMatch[1]} href={href} />;
     }
     return (
       <a href={href} target="_blank" rel="noopener noreferrer">
