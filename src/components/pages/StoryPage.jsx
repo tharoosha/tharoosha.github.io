@@ -1,13 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
 import { useParams, useNavigate } from "react-router-dom";
-import ReactMarkdown from "react-markdown";
 import { Helmet } from "react-helmet-async";
 import { stories } from "../../data/stories";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
-
-const YOUTUBE_REGEX =
-  /(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/watch\?v=|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
 
 const Page = styled.div`
   min-height: 100vh;
@@ -45,298 +41,12 @@ const BackBtn = styled.button`
   }
 `;
 
-const CoverImage = styled.img`
+const StoryFrame = styled.iframe`
   width: 100%;
-  height: 420px;
-  object-fit: cover;
-  object-position: ${({ $position }) => $position || "center"};
+  border: none;
   display: block;
-
-  @media (max-width: 768px) {
-    height: 240px;
-  }
+  min-height: 100vh;
 `;
-
-const ContentArea = styled.div`
-  max-width: 720px;
-  margin: 0 auto;
-  padding: 48px 24px 80px;
-`;
-
-const CategoryTag = styled.span`
-  font-size: 12px;
-  font-weight: 700;
-  color: #ff5722;
-  background: rgba(255, 87, 34, 0.08);
-  border-radius: 50px;
-  padding: 4px 14px;
-  letter-spacing: 0.5px;
-`;
-
-const ArticleTitle = styled.h1`
-  font-size: 48px;
-  font-weight: 800;
-  color: #111111;
-  line-height: 1.15;
-  letter-spacing: -1.5px;
-  margin: 16px 0 12px;
-
-  @media (max-width: 768px) {
-    font-size: 30px;
-    letter-spacing: -0.5px;
-  }
-`;
-
-const ArticleSubtitle = styled.p`
-  font-size: 20px;
-  color: #666666;
-  line-height: 1.6;
-  margin: 0 0 24px;
-
-  @media (max-width: 768px) {
-    font-size: 16px;
-  }
-`;
-
-const Meta = styled.div`
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 8px;
-  font-size: 13px;
-  color: #999999;
-  padding-bottom: 32px;
-  border-bottom: 1px solid #e4e0d8;
-  margin-bottom: 40px;
-
-  @media (max-width: 768px) {
-    font-size: 11px;
-    gap: 6px;
-  }
-`;
-
-const Divider = styled.span`
-  width: 4px;
-  height: 4px;
-  background: #cccccc;
-  border-radius: 50%;
-  display: inline-block;
-`;
-
-const FloatRight = styled.span`
-  float: right;
-  display: block;
-  width: 260px;
-  margin: 4px 0 20px 28px;
-
-  img {
-    width: 100%;
-    border-radius: 12px;
-    display: block;
-    margin: 0;
-    object-fit: cover;
-  }
-
-  span {
-    display: block;
-    font-size: 12px;
-    color: #999999;
-    text-align: center;
-    margin-top: 6px;
-    line-height: 1.4;
-  }
-
-  @media (max-width: 600px) {
-    float: none;
-    width: 100%;
-    margin: 0 0 20px 0;
-  }
-`;
-
-const MarkdownWrapper = styled.div`
-  h1, h2, h3, h4 {
-    font-weight: 700;
-    color: #111111;
-    margin: 40px 0 16px;
-    line-height: 1.3;
-  }
-  h1 { font-size: 36px; }
-  h2 { font-size: 28px; }
-  h3 { font-size: 22px; }
-
-  p {
-    font-size: 17px;
-    color: #333333;
-    line-height: 1.85;
-    margin: 0 0 24px;
-  }
-
-  strong { font-weight: 700; color: #111111; }
-  em { font-style: italic; }
-
-  ul, ol {
-    padding-left: 24px;
-    margin: 0 0 24px;
-  }
-  li {
-    font-size: 17px;
-    color: #333333;
-    line-height: 1.85;
-    margin-bottom: 8px;
-  }
-
-  blockquote {
-    border-left: 3px solid #FF5722;
-    padding: 8px 0 8px 20px;
-    margin: 32px 0;
-    p {
-      font-size: 20px;
-      font-style: italic;
-      color: #555555;
-      margin: 0;
-    }
-  }
-
-  img {
-    width: 100%;
-    border-radius: 12px;
-    margin: 24px 0 8px;
-    display: block;
-    object-fit: cover;
-  }
-
-  a {
-    color: #FF5722;
-    text-decoration: underline;
-    text-underline-offset: 3px;
-  }
-
-  code {
-    background: #f0ede7;
-    border-radius: 4px;
-    padding: 2px 6px;
-    font-size: 14px;
-    font-family: monospace;
-  }
-
-  pre {
-    background: #1a1a1a;
-    border-radius: 12px;
-    padding: 20px;
-    overflow-x: auto;
-    margin: 24px 0;
-    code {
-      background: none;
-      color: #e0e0e0;
-      font-size: 14px;
-      padding: 0;
-    }
-  }
-
-  hr {
-    border: none;
-    border-top: 1px solid #e4e0d8;
-    margin: 40px 0;
-  }
-`;
-
-const BookmarkCard = styled.a`
-  display: flex;
-  align-items: stretch;
-  border: 1px solid #e4e0d8;
-  border-radius: 12px;
-  overflow: hidden;
-  text-decoration: none !important;
-  margin: 24px 0;
-  background: #ffffff;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
-
-  &:hover {
-    border-color: #ff5722;
-    box-shadow: 0 4px 16px rgba(255, 87, 34, 0.08);
-  }
-`;
-
-const BookmarkBody = styled.div`
-  flex: 1;
-  padding: 16px 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 8px;
-  min-width: 0;
-`;
-
-const BookmarkTitle = styled.div`
-  font-size: 15px;
-  font-weight: 600;
-  color: #111111;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-`;
-
-const BookmarkMeta = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 12px;
-  color: #999999;
-`;
-
-const BookmarkThumb = styled.div`
-  width: 180px;
-  flex-shrink: 0;
-
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    margin: 0;
-    border-radius: 0;
-  }
-
-  @media (max-width: 480px) {
-    width: 110px;
-  }
-`;
-
-const YouTubeBookmark = ({ videoId, href }) => {
-  const [title, setTitle] = useState("Watch on YouTube");
-  const [author, setAuthor] = useState("");
-
-  useEffect(() => {
-    fetch(`https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=${videoId}&format=json`)
-      .then((r) => r.json())
-      .then((data) => {
-        if (data.title) setTitle(data.title);
-        if (data.author_name) setAuthor(data.author_name);
-      })
-      .catch(() => {});
-  }, [videoId]);
-
-  return (
-    <BookmarkCard href={href} target="_blank" rel="noopener noreferrer">
-      <BookmarkBody>
-        <BookmarkTitle>{title}</BookmarkTitle>
-        <BookmarkMeta>
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="#ff0000">
-            <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.8 15.5V8.5l6.3 3.5-6.3 3.5z"/>
-          </svg>
-          {author && <span>{author}</span>}
-          {author && <span>·</span>}
-          <span>youtube.com</span>
-        </BookmarkMeta>
-      </BookmarkBody>
-      <BookmarkThumb>
-        <img src={`https://img.youtube.com/vi/${videoId}/mqdefault.jpg`} alt={title} />
-      </BookmarkThumb>
-    </BookmarkCard>
-  );
-};
 
 const NotFound = styled.div`
   display: flex;
@@ -349,39 +59,25 @@ const NotFound = styled.div`
   color: #666666;
 `;
 
-const customComponents = {
-  img({ src, alt, title }) {
-    if (title === "right") {
-      return (
-        <FloatRight>
-          <img src={src} alt={alt} />
-          {alt && <span>{alt}</span>}
-        </FloatRight>
-      );
-    }
-    return <img src={src} alt={alt} />;
-  },
-  a({ href, children }) {
-    const ytMatch = href?.match(YOUTUBE_REGEX);
-    if (ytMatch) {
-      return <YouTubeBookmark videoId={ytMatch[1]} href={href} />;
-    }
-    return (
-      <a href={href} target="_blank" rel="noopener noreferrer">
-        {children}
-      </a>
-    );
-  },
-};
-
 const StoryPage = () => {
   const { slug } = useParams();
   const navigate = useNavigate();
   const story = stories.find((s) => s.slug === slug);
+  const frameRef = useRef(null);
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [slug]);
+
+  useEffect(() => {
+    const handler = (e) => {
+      if (e.data?.iframeHeight && frameRef.current) {
+        frameRef.current.style.height = e.data.iframeHeight + "px";
+      }
+    };
+    window.addEventListener("message", handler);
+    return () => window.removeEventListener("message", handler);
+  }, []);
 
   if (!story) {
     return (
@@ -395,13 +91,6 @@ const StoryPage = () => {
       </Page>
     );
   }
-
-  const formatDate = (dateStr) =>
-    new Date(dateStr).toLocaleDateString("en-US", {
-      year: "numeric",
-      month: "long",
-      day: "numeric",
-    });
 
   const pageUrl = `https://tharoosha.github.io/story/${story.slug}`;
 
@@ -426,35 +115,11 @@ const StoryPage = () => {
           <ArrowBackIcon style={{ fontSize: 18 }} /> Back
         </BackBtn>
       </TopBar>
-
-      {story.coverImage && (
-        <CoverImage src={story.coverImage} alt={story.title} $position={story.coverImagePosition} />
-      )}
-
-      <ContentArea>
-        <CategoryTag>{story.category}</CategoryTag>
-        <ArticleTitle>{story.title}</ArticleTitle>
-        {story.subtitle && (
-          <ArticleSubtitle>{story.subtitle}</ArticleSubtitle>
-        )}
-        <Meta>
-          <span>Vihidun</span>
-          <Divider />
-          <span>{formatDate(story.date)}</span>
-          {story.tags?.length > 0 && (
-            <>
-              <Divider />
-              <span>{story.tags.join(" · ")}</span>
-            </>
-          )}
-        </Meta>
-
-        <MarkdownWrapper>
-          <ReactMarkdown components={customComponents}>
-            {story.content}
-          </ReactMarkdown>
-        </MarkdownWrapper>
-      </ContentArea>
+      <StoryFrame
+        ref={frameRef}
+        src={story.htmlSrc}
+        title={story.title}
+      />
     </Page>
   );
 };

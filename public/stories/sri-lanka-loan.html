@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Is This a Good Time to Take a Loan in Sri Lanka?</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { overflow: hidden; }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: #faf8f4;
+    color: #333333;
+    line-height: 1.85;
+    font-size: 17px;
+  }
+
+  /* COVER */
+  .cover-banner {
+    width: 100%;
+    display: block;
+    border-bottom: 1px solid #e4e0d8;
+    background: #ffffff;
+  }
+
+  .cover-banner img {
+    width: 100%;
+    max-height: 420px;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+
+  /* HERO */
+  .hero {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 56px 24px 40px;
+    border-bottom: 1px solid #e4e0d8;
+  }
+
+  .hero-eyebrow {
+    font-size: 11px;
+    font-weight: 700;
+    color: #ff5722;
+    background: rgba(255, 87, 34, 0.08);
+    border-radius: 50px;
+    padding: 4px 14px;
+    display: inline-block;
+    margin-bottom: 20px;
+  }
+
+  .hero h1 {
+    font-size: clamp(30px, 5vw, 48px);
+    font-weight: 800;
+    color: #111111;
+    line-height: 1.15;
+    letter-spacing: -1.5px;
+    margin-bottom: 18px;
+  }
+
+  .hero-deck {
+    font-size: 19px;
+    color: #666666;
+    line-height: 1.6;
+    margin-bottom: 24px;
+  }
+
+  .hero-meta {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    font-size: 13px;
+    color: #999999;
+  }
+
+  .dot {
+    width: 4px;
+    height: 4px;
+    background: #cccccc;
+    border-radius: 50%;
+    display: inline-block;
+    flex-shrink: 0;
+  }
+
+  /* LAYOUT */
+  .wrap {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 24px 80px;
+  }
+
+  /* STAT ROW */
+  .stat-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1px;
+    background: #e4e0d8;
+    border: 1px solid #e4e0d8;
+    border-radius: 12px;
+    overflow: hidden;
+    margin: 40px 0;
+  }
+
+  .stat-cell { background: #faf8f4; padding: 20px 22px; }
+
+  .stat-num {
+    font-size: 34px;
+    font-weight: 800;
+    line-height: 1;
+    color: #ff5722;
+    margin-bottom: 4px;
+  }
+
+  .stat-num.amber { color: #d4750a; }
+  .stat-num.green { color: #1a6b3c; }
+  .stat-num.blue  { color: #1a4a7a; }
+
+  .stat-label { font-size: 12px; color: #999999; line-height: 1.4; }
+
+  /* SECTIONS */
+  .section { margin: 40px 0; }
+
+  .section-tag {
+    font-size: 11px;
+    font-weight: 700;
+    color: #ff5722;
+    background: rgba(255, 87, 34, 0.08);
+    border-radius: 50px;
+    padding: 3px 12px;
+    display: inline-block;
+    margin-bottom: 16px;
+  }
+
+  h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #111111;
+    line-height: 1.3;
+    margin-bottom: 16px;
+    letter-spacing: -0.5px;
+  }
+
+  h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #111111;
+    margin: 28px 0 10px;
+  }
+
+  p { margin-bottom: 18px; color: #333333; font-size: 17px; line-height: 1.85; }
+  p:last-child { margin-bottom: 0; }
+  strong { color: #111111; font-weight: 700; }
+  em { font-style: italic; }
+
+  hr { border: none; border-top: 1px solid #e4e0d8; margin: 40px 0; }
+
+  /* PULL QUOTE */
+  .pullquote {
+    border-left: 3px solid #ff5722;
+    margin: 36px 0;
+    padding: 20px 28px;
+    background: rgba(255, 87, 34, 0.04);
+    border-radius: 0 8px 8px 0;
+  }
+
+  .pullquote p {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.5;
+    color: #111111;
+    margin: 0;
+    font-style: italic;
+  }
+
+  .pullquote cite {
+    display: block;
+    margin-top: 10px;
+    font-size: 12px;
+    color: #ff5722;
+    font-style: normal;
+  }
+
+  /* CALLOUTS */
+  .callout {
+    border-radius: 12px;
+    padding: 22px 26px;
+    margin: 32px 0;
+    border: 1px solid;
+  }
+
+  .callout.amber { background: #fef6ea; border-color: #f3c97a; }
+  .callout.green { background: #edf7f2; border-color: #85c9a3; }
+  .callout.red   { background: #fdf0ee; border-color: #e8a09a; }
+
+  .callout-title {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  .callout.amber .callout-title { color: #d4750a; }
+  .callout.green .callout-title { color: #1a6b3c; }
+  .callout.red   .callout-title { color: #c0392b; }
+
+  .callout p { font-size: 15px; color: #333333; margin-bottom: 8px; }
+  .callout p:last-child { margin-bottom: 0; }
+
+  /* CHARTS */
+  .chart-block {
+    margin: 40px 0;
+    border: 1px solid #e4e0d8;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .chart-header {
+    padding: 18px 22px 14px;
+    border-bottom: 1px solid #e4e0d8;
+    background: #f0ede7;
+  }
+
+  .chart-title { font-size: 14px; font-weight: 700; color: #111111; margin-bottom: 3px; }
+  .chart-subtitle { font-size: 12px; color: #999999; }
+  .chart-body { padding: 24px 22px; background: #faf8f4; }
+
+  .chart-source {
+    padding: 10px 22px 14px;
+    font-size: 11px;
+    color: #999999;
+    border-top: 1px solid #e4e0d8;
+    background: #f0ede7;
+    line-height: 1.5;
+  }
+
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-bottom: 16px;
+    font-size: 12px;
+    color: #666666;
+  }
+
+  .legend span { display: flex; align-items: center; gap: 6px; }
+  .swatch { width: 14px; height: 3px; border-radius: 2px; display: inline-block; }
+
+  /* RISK TABLE */
+  .risk-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 14px; }
+
+  .risk-table th {
+    text-align: left;
+    font-size: 11px;
+    font-weight: 700;
+    color: #999999;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 10px 14px;
+    border-bottom: 2px solid #111111;
+  }
+
+  .risk-table td {
+    padding: 12px 14px;
+    border-bottom: 1px solid #e4e0d8;
+    color: #333333;
+    vertical-align: top;
+  }
+
+  .risk-table tr:last-child td { border-bottom: none; }
+  .risk-table tr:hover td { background: #f0ede7; }
+
+  .badge {
+    display: inline-block;
+    font-size: 10px;
+    padding: 2px 8px;
+    border-radius: 50px;
+    font-weight: 700;
+  }
+
+  .badge.high   { background: #fde8e8; color: #8b1a1a; }
+  .badge.medium { background: #fef3e0; color: #7a4500; }
+  .badge.low    { background: #e8f5ed; color: #0d4a25; }
+
+  /* SCENARIO GRID */
+  .scenario-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1px;
+    background: #e4e0d8;
+    border: 1px solid #e4e0d8;
+    border-radius: 12px;
+    overflow: hidden;
+    margin: 28px 0;
+  }
+
+  .scenario-cell { background: #faf8f4; padding: 20px; }
+
+  .sc-label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  .scenario-cell.best  .sc-label { color: #1a6b3c; }
+  .scenario-cell.base  .sc-label { color: #d4750a; }
+  .scenario-cell.worst .sc-label { color: #c0392b; }
+
+  .sc-rate { font-size: 22px; font-weight: 800; line-height: 1; margin-bottom: 8px; }
+
+  .scenario-cell.best  .sc-rate { color: #1a6b3c; }
+  .scenario-cell.base  .sc-rate { color: #d4750a; }
+  .scenario-cell.worst .sc-rate { color: #c0392b; }
+
+  .scenario-cell p { font-size: 13px; color: #666666; margin: 0; line-height: 1.6; }
+
+  /* DIVIDER */
+  .divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 44px 0;
+  }
+
+  .divider::before, .divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: #e4e0d8;
+  }
+
+  .divider span {
+    font-size: 11px;
+    font-weight: 700;
+    color: #ff5722;
+    background: rgba(255, 87, 34, 0.08);
+    border-radius: 50px;
+    padding: 3px 14px;
+    text-transform: uppercase;
+  }
+
+  /* VERDICT */
+  .verdict {
+    background: #111111;
+    color: #ffffff;
+    border-radius: 12px;
+    padding: 36px;
+    margin: 48px 0 40px;
+  }
+
+  .verdict-eyebrow {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: #ff5722;
+    margin-bottom: 14px;
+  }
+
+  .verdict h2 { color: #ffffff; font-size: clamp(22px, 3vw, 28px); margin-bottom: 16px; }
+  .verdict p  { color: rgba(255,255,255,0.78); font-size: 16px; margin-bottom: 14px; line-height: 1.75; }
+  .verdict ul { color: rgba(255,255,255,0.78); font-size: 15px; padding-left: 22px; }
+  .verdict ul li { margin-bottom: 8px; line-height: 1.75; }
+  .verdict strong { color: #ff9a6c; font-weight: 700; }
+
+  /* PERSONAL NOTE */
+  .personal-note {
+    border-left: 3px solid #ff5722;
+    background: rgba(255, 87, 34, 0.04);
+    border-radius: 0 8px 8px 0;
+    padding: 20px 28px;
+    margin: 40px 0;
+  }
+
+  .personal-note p {
+    font-size: 16px;
+    color: #444444;
+    line-height: 1.85;
+    margin-bottom: 14px;
+    font-style: italic;
+  }
+
+  .personal-note p:last-child { margin-bottom: 0; }
+
+  /* SIGN-OFF */
+  .signoff {
+    margin: 48px 0 0;
+    padding-top: 32px;
+    border-top: 1px solid #e4e0d8;
+  }
+
+  .signoff p {
+    font-size: 16px;
+    color: #444444;
+    line-height: 1.85;
+    margin-bottom: 14px;
+    font-style: italic;
+  }
+
+  .signoff-name {
+    font-size: 15px;
+    font-weight: 700;
+    color: #111111;
+    font-style: normal;
+    margin-top: 20px;
+    display: block;
+  }
+
+  /* FOOTER */
+  .article-footer {
+    border-top: 2px solid #111111;
+    padding: 28px 24px 40px;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .footer-note { font-size: 12px; color: #999999; line-height: 1.7; }
+  .sources-list { margin-top: 16px; padding-left: 18px; }
+  .sources-list li { font-size: 12px; color: #999999; margin-bottom: 5px; }
+
+  @media (max-width: 600px) {
+    .hero h1 { font-size: 26px; letter-spacing: -0.5px; }
+    .hero-deck { font-size: 16px; }
+    .stat-num { font-size: 26px; }
+    .verdict { padding: 24px 20px; }
+    .pullquote { padding: 16px 18px; }
+    .pullquote p { font-size: 17px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="cover-banner">
+  <img src="/stories/sri-lanka-loan-cover.svg" alt="Is This a Good Time to Take a Loan in Sri Lanka?">
+</div>
+
+<header class="hero">
+  <div class="hero-eyebrow">Special Report · June 2026</div>
+  <h1>Is This a Good Time to Take a Loan in Sri Lanka?</h1>
+  <p class="hero-deck">El Niño is arriving. The Middle East conflict is reshaping global energy. Interest rates are floating. Here is what every Sri Lankan borrower needs to understand before signing a loan agreement in 2026.</p>
+  <div class="hero-meta">
+    <span>Tharoosha Vihidun</span>
+    <span class="dot"></span>
+    <span>June 14, 2026</span>
+    <span class="dot"></span>
+    <span>Finance · Macroeconomics</span>
+    <span class="dot"></span>
+    <span>8 min read</span>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <div class="personal-note">
+    <p>I wrote this after someone close to me was about to sign a personal loan agreement. They'd seen the advertised rate, done the mental math on the monthly installment, and decided it worked for their budget. What they hadn't checked — and what the bank hadn't exactly highlighted — was whether the rate was fixed or floating. Or what was happening in the economy that might push that rate up over the next 12 months.</p>
+    <p>I started looking into it. The more I read, the more I realised the timing was genuinely interesting — both as an opportunity and as a risk. Sri Lanka's rates are near a five-year low right now. But there are specific forces building that I think every borrower should understand before signing anything in 2026.</p>
+    <p>I'm not a financial professional. This is just what I found after spending time in the numbers, and what I'd want a friend to know before they walked into a bank.</p>
+  </div>
+
+  <div class="stat-row">
+    <div class="stat-cell">
+      <div class="stat-num">9.7%</div>
+      <div class="stat-label">AWPLR — Sri Lanka prime lending benchmark (Apr 2026)</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-num amber">80%</div>
+      <div class="stat-label">NOAA probability of El Niño Jun–Aug 2026</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-num">$5.7T</div>
+      <div class="stat-label">Global income lost in the 1997–98 El Niño (5-year impact)</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-num blue">2.5%</div>
+      <div class="stat-label">World Bank global growth forecast 2026 — weakest since COVID</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <span class="section-tag">Setting the scene</span>
+    <h2>The Confluence: Three Forces Hitting Sri Lanka at Once</h2>
+    <p>Sri Lanka's economy has staged a remarkable recovery since the 2022 debt crisis. GDP is growing at 4.8–5%, inflation has been tamed to roughly 2%, and the Central Bank of Sri Lanka (CBSL) has held its Overnight Policy Rate (OPR) at 7.75% — a sign of hard-won stability. Prime lending rates have fallen from a crisis peak of nearly 28% to around 9.7% today.</p>
+    <p>But borrowers in 2026 face a genuinely unusual combination of risks: a strengthening El Niño weather pattern, an ongoing Middle East conflict that is reshaping global energy markets, and a domestic loan environment where <strong>most personal and consumption loans carry floating interest rates</strong> — meaning your monthly payment can change without notice as market conditions shift.</p>
+    <p>Understanding how these three forces interact is not academic. For anyone considering a personal loan, a housing loan, or any variable-rate facility from a Sri Lankan commercial bank right now, it is the difference between a manageable financial commitment and an unpleasant surprise six months from now.</p>
+  </div>
+
+  <div class="chart-block">
+    <div class="chart-header">
+      <div class="chart-title">Sri Lanka floating personal loan rates — 2019 to 2026</div>
+      <div class="chart-subtitle">Personal loan rate vs AWPLR benchmark (Sampath Bank indicative)</div>
+    </div>
+    <div class="chart-body">
+      <div class="legend">
+        <span><span class="swatch" style="background:#ff5722;"></span>Personal loan rate</span>
+        <span><span class="swatch" style="background:#111111;"></span>Housing / secured loan rate</span>
+        <span><span class="swatch" style="background:#999999;"></span>AWPLR benchmark</span>
+      </div>
+      <div style="position:relative;width:100%;height:300px;">
+        <canvas id="rateChart"></canvas>
+      </div>
+    </div>
+    <div class="chart-source">Source: Central Bank of Sri Lanka (CBSL) AWPLR data; Sampath Bank published rate sheets. Intermediate points interpolated from CBSL AWPLR + bank margin structure.</div>
+  </div>
+
+  <div class="pullquote">
+    <p>"Unless specifically mentioned as fixed, all interest rates are floating rates."</p>
+    <cite>— Sampath Bank PLC, Interest Rates on Loans &amp; Advances (standard clause, 2026)</cite>
+  </div>
+
+  <div class="section">
+    <span class="section-tag">The floating rate mechanism</span>
+    <h2>What "Variable Rate" Actually Means for Your Wallet</h2>
+    <p>Most Sri Lankan borrowers are familiar with the advertised loan rate — 14%, 15%, 18% — but far fewer understand that for personal and consumption loans, this rate is almost universally <strong>floating</strong>, not fixed.</p>
+    <p>The mechanism works as follows. Commercial banks price their loans against the Average Weighted Prime Lending Rate (AWPLR), published weekly by CBSL. When CBSL raises its Overnight Policy Rate (OPR) in response to inflation or external pressure, the AWPLR rises within weeks, and banks revise their loan rates accordingly. Your monthly installment — which your agreement states was "calculated at the prevailing interest rate" — can increase without any formal notice beyond a change in your account debit.</p>
+    <h3>How a rate change flows to your EMI</h3>
+    <p>On a Rs. 1.4 million personal loan over 36 months, the relationship between OPR changes and monthly repayment burden looks like this:</p>
+  </div>
+
+  <div class="chart-block">
+    <div class="chart-header">
+      <div class="chart-title">EMI sensitivity to OPR hikes — Rs. 1.4Mn / 36-month personal loan</div>
+      <div class="chart-subtitle">How each 0.5% OPR increase flows into monthly repayment burden</div>
+    </div>
+    <div class="chart-body">
+      <div style="position:relative;width:100%;height:260px;">
+        <canvas id="emiChart"></canvas>
+      </div>
+    </div>
+    <div class="chart-source">Source: Reducing balance EMI calculation. OPR-to-AWPLR transmission assumes ~0.8% AWPLR rise per 1.0% OPR hike, consistent with CBSL historical transmission data 2021–2024.</div>
+  </div>
+
+  <div class="divider"><span>El Niño</span></div>
+
+  <div class="section">
+    <span class="section-tag">The weather risk</span>
+    <h2>El Niño 2026: Why This One Is Different</h2>
+    <p>El Niño — the periodic warming of the central and eastern tropical Pacific Ocean — is not new. But the 2026 event is arriving at an unusually difficult moment, and the evidence of its economic consequences has grown considerably sharper.</p>
+    <p>NOAA puts the probability of El Niño conditions persisting through early 2027 at <strong>96%</strong>. The World Economic Forum describes it as a potential "systemic shock" hitting a planet already facing brittle food systems, stressed energy markets, and fragile public finances. Peer-reviewed research published in <em>Science</em> (Callahan &amp; Mankin, 2023) attributes $5.7 trillion in global income losses to the 1997–98 El Niño alone — losses that persisted for five years after the event.</p>
+    <h3>The transmission chain to Sri Lanka</h3>
+    <p>Sri Lanka sits squarely in the tropical zone most exposed to El Niño effects. The mechanism runs through agriculture, energy, and external balances simultaneously — hitting inflation from three directions at once.</p>
+  </div>
+
+  <div class="chart-block">
+    <div class="chart-header">
+      <div class="chart-title">Cumulative GDP loss 5 years after a strong El Niño event</div>
+      <div class="chart-subtitle">By country type — historical average from 1982–83 and 1997–98 events (% of GDP)</div>
+    </div>
+    <div class="chart-body">
+      <div style="position:relative;width:100%;height:310px;">
+        <canvas id="gdpChart"></canvas>
+      </div>
+    </div>
+    <div class="chart-source">Source: Callahan &amp; Mankin (Science, 2023); Nature Communications (2023); ScienceDirect ENSO study (2017). Sri Lanka figure is estimated based on tropical small-island vulnerability metrics.</div>
+  </div>
+
+  <div class="section">
+    <h3>Why Sri Lanka is more exposed than regional peers</h3>
+    <p>Several structural factors amplify El Niño's impact on Sri Lanka relative to larger South Asian economies:</p>
+    <p><strong>Agriculture and hydropower dependence.</strong> Rice, tea, vegetables, and coconut are all heavily rain-dependent. Meanwhile, hydropower supplies 30–40% of Sri Lanka's electricity from central hill reservoirs fed by the southwest monsoon — exactly the monsoon El Niño weakens. A drought season forces the Ceylon Electricity Board to switch to expensive thermal power, triggering tariff hikes that ripple through every sector of the economy.</p>
+    <p><strong>Import dependency and FX vulnerability.</strong> When domestic food production falls, Sri Lanka imports to compensate — spending precious foreign exchange reserves that were hard-won during the IMF recovery program. Reserve depletion puts downward pressure on the LKR, which then raises the cost of all other imports including fuel and fertiliser, creating a self-reinforcing inflation loop.</p>
+    <p><strong>The Panama Canal effect.</strong> El Niño dries the Panama Canal, cutting daily vessel transits from 36 to under 20 in 2026. Ships rerouting via Cape Horn add 10–14 days to voyages and millions in fuel costs per trip. Sri Lanka's import-dependent economy absorbs higher freight costs on virtually everything.</p>
+  </div>
+
+  <div class="callout amber">
+    <div class="callout-title">⚠ Compounding Risk — Middle East Conflict</div>
+    <p>El Niño is not arriving in isolation. The World Bank's June 2026 Global Economic Prospects report projects global growth slowing to just 2.5% — the weakest since the COVID pandemic — driven in part by the Middle East conflict's impact on energy prices. South Asian growth is also being revised down to 6.3% from earlier forecasts, with remittances from Gulf countries declining and tourism disrupted.</p>
+    <p>Sri Lanka faces two simultaneous external shocks: a weather event compressing domestic food and energy supply, and a geopolitical event raising the price of everything Sri Lanka imports. The combination is more damaging than either alone.</p>
+  </div>
+
+  <div class="divider"><span>Scenarios</span></div>
+
+  <div class="section">
+    <span class="section-tag">Interest rate outlook</span>
+    <h2>Three Scenarios for Sri Lanka's Interest Rates in 2026–2027</h2>
+    <p>Whether and how much floating rates rise depends on how the El Niño and external shocks interact with Sri Lanka's domestic inflation. CBSL has held its OPR at 7.75% and projects inflation reaching its 5% target by H2 2026. But its own May 2026 monetary policy review flags energy prices, weather events, and strong credit growth as upside inflation risks requiring "appropriate policy measures."</p>
+  </div>
+
+  <div class="scenario-grid">
+    <div class="scenario-cell best">
+      <div class="sc-label">Best case — Mild El Niño</div>
+      <div class="sc-rate">OPR: 7.75%</div>
+      <p>AWPLR stays around 9–10%. Personal loan rates hold at 13–15%. CBSL keeps OPR unchanged. Borrowers on floating rates see minimal EMI change — Rs. 0–500/month increase at most.</p>
+    </div>
+    <div class="scenario-cell base">
+      <div class="sc-label">Base case — Moderate El Niño</div>
+      <div class="sc-rate">OPR: 8.25–8.75%</div>
+      <p>Inflation hits 6–8%. CBSL raises OPR 50–100 basis points. Personal loan rates rise 0.5–1.5%. EMI on a Rs. 1.4Mn loan increases by Rs. 500–1,500/month over 12–18 months.</p>
+    </div>
+    <div class="scenario-cell worst">
+      <div class="sc-label">Worst case — Strong El Niño + shocks</div>
+      <div class="sc-rate">OPR: 9.5%+</div>
+      <p>Inflation above 10%. GDP growth slows to 1–2%. CBSL forced to hike OPR 150–200 bps. Personal loan rates could reach 16–18%. EMI rises Rs. 1,500–3,000/month. LKR depreciates sharply.</p>
+    </div>
+  </div>
+
+  <div class="chart-block">
+    <div class="chart-header">
+      <div class="chart-title">AWPLR forecast scenarios — Jun 2026 to Dec 2027</div>
+      <div class="chart-subtitle">Three paths depending on El Niño severity and global conditions</div>
+    </div>
+    <div class="chart-body">
+      <div class="legend">
+        <span><span class="swatch" style="background:#1a6b3c;"></span>Best case</span>
+        <span><span class="swatch" style="background:#d4750a;"></span>Base case</span>
+        <span><span class="swatch" style="background:#c0392b;"></span>Worst case</span>
+        <span><span class="swatch" style="background:#1a4a7a;"></span>Current AWPLR (9.7%)</span>
+      </div>
+      <div style="position:relative;width:100%;height:280px;">
+        <canvas id="forecastChart"></canvas>
+      </div>
+    </div>
+    <div class="chart-source">Source: Author's analysis based on CBSL monetary policy reviews (Jan 2026, May 2026); NOAA El Niño probability forecasts; World Bank Global Economic Prospects Jun 2026. Forecasts are illustrative scenarios, not official projections.</div>
+  </div>
+
+  <div class="divider"><span>Decision guide</span></div>
+
+  <div class="section">
+    <span class="section-tag">Risk framework</span>
+    <h2>Should You Borrow Right Now? A Factor-by-Factor Assessment</h2>
+    <table class="risk-table">
+      <thead>
+        <tr>
+          <th>Factor</th>
+          <th>Current status</th>
+          <th>Risk to borrower</th>
+          <th>Level</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Base interest rate</strong></td>
+          <td>AWPLR 9.7% — near 5-year low</td>
+          <td>Rates are historically low now; timing is favourable for locking in</td>
+          <td><span class="badge low">LOW</span></td>
+        </tr>
+        <tr>
+          <td><strong>Rate structure</strong></td>
+          <td>Most personal loans are floating</td>
+          <td>Your EMI can rise without notice if AWPLR increases</td>
+          <td><span class="badge high">HIGH</span></td>
+        </tr>
+        <tr>
+          <td><strong>El Niño 2026</strong></td>
+          <td>80–96% probability; H2 2026 peak</td>
+          <td>Food and energy inflation likely to push CBSL toward rate hikes</td>
+          <td><span class="badge high">HIGH</span></td>
+        </tr>
+        <tr>
+          <td><strong>Middle East conflict</strong></td>
+          <td>Ongoing; oil prices elevated</td>
+          <td>Higher import costs compound domestic inflation pressure</td>
+          <td><span class="badge medium">MEDIUM</span></td>
+        </tr>
+        <tr>
+          <td><strong>IMF program</strong></td>
+          <td>On track; USD 6.8bn reserves</td>
+          <td>Provides stability buffer; disruption risk is a tail scenario</td>
+          <td><span class="badge low">LOW</span></td>
+        </tr>
+        <tr>
+          <td><strong>LKR stability</strong></td>
+          <td>Broadly stable; depreciated 5.6% in 2025</td>
+          <td>Further weakness possible if external shocks compound</td>
+          <td><span class="badge medium">MEDIUM</span></td>
+        </tr>
+        <tr>
+          <td><strong>Private credit growth</strong></td>
+          <td>Rising strongly</td>
+          <td>Excess demand pressure may force CBSL to tighten</td>
+          <td><span class="badge medium">MEDIUM</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="verdict">
+    <div class="verdict-eyebrow">The bottom line</div>
+    <h2>Borrow Smart — But Borrow with Eyes Open</h2>
+    <p>The current interest rate environment — AWPLR at 9.7%, personal loan rates around 13–15% — represents one of the most favourable borrowing windows Sri Lanka has seen since 2021. Compared to the crisis peak of 30% in late 2022, today's rates are genuinely low. If you have a productive purpose for a loan, the base rate cost is not the problem.</p>
+    <p>The problem is the structure of the loan. Here is what every borrower should do before signing:</p>
+    <ul>
+      <li><strong>Confirm whether your rate is fixed or floating.</strong> Read clause 4 of your loan agreement. If it says "variable" or "floating," your EMI can rise with AWPLR. If it says "fixed," you are protected for the loan term.</li>
+      <li><strong>Stress-test your budget for a 2% rate rise.</strong> If the El Niño base case materialises, personal loan rates could rise 1–1.5% over 12–18 months. Calculate whether your budget absorbs an extra Rs. 1,000–1,500/month before committing.</li>
+      <li><strong>Maintain a monthly buffer in your repayment account.</strong> Banks auto-debit your installment on the due date, and a revised (higher) EMI will be debited without warning. Keep 15–20% above your current EMI amount in that account at all times.</li>
+      <li><strong>Borrow for productive or asset-building purposes.</strong> Loans for productive assets — solar panels, housing, small business equipment — generate returns or savings that offset the cost of borrowing even if rates rise modestly. Consumer spending loans carry much higher risk in a rising-rate environment.</li>
+      <li><strong>Watch CBSL monetary policy announcements.</strong> CBSL publishes monetary policy decisions every two months. An OPR hike will be announced publicly before it filters into your loan rate. This gives you 4–8 weeks of advance warning to plan.</li>
+    </ul>
+    <p style="margin-top:18px;font-size:15px;">The current window is genuinely favourable for borrowing — but it may not stay that way. El Niño, Middle East energy dynamics, and rising domestic credit growth are all pointing toward a period of upward rate pressure in H2 2026 and into 2027. Borrowing now at today's rates is reasonable. Borrowing without understanding the floating rate mechanism in the environment ahead is not.</p>
+  </div>
+
+  <div class="callout green">
+    <div class="callout-title">✓ Borrowing purposes with stronger risk profiles in this environment</div>
+    <p><strong>Renewable energy / solar installations</strong> — generate monthly electricity savings that offset loan costs and are immune to energy price inflation.</p>
+    <p><strong>Housing improvements</strong> — tangible asset appreciation; housing loan rates carry lower margins than personal loans.</p>
+    <p><strong>Income-generating small business investment</strong> — productive capital that can generate returns above the borrowing rate.</p>
+    <p><strong>Education</strong> — human capital investment with long payoff horizon that outlasts short-term rate cycles.</p>
+  </div>
+
+  <div class="callout red">
+    <div class="callout-title">✗ Higher-risk borrowing in the current environment</div>
+    <p><strong>Pure consumption loans</strong> — appliances, vehicles, travel — with no asset or income backing. Rate rises erode disposable income with no offsetting return.</p>
+    <p><strong>Overleveraging during an IMF recovery</strong> — Sri Lanka's fiscal position is still fragile. A second external shock could stress household finances significantly faster than expected.</p>
+    <p><strong>Borrowing in foreign currency</strong> — LKR depreciation risk adds a compounding layer to interest rate risk.</p>
+  </div>
+
+  <div class="signoff">
+    <p>I started researching this because someone I care about was about to sign a loan without fully understanding what they were signing. I hope this saves someone else from the same gap. The rates are genuinely low right now — lower than they've been in years — and that's real. But the floating rate mechanism is real too, and the external pressures building in 2026 are not abstract.</p>
+    <p>Read the clause. Run the numbers at a higher rate. Keep a buffer. Then decide.</p>
+    <p>If this was useful to you, or if you think I've got something wrong, I'd genuinely like to hear from you.</p>
+    <span class="signoff-name">— Tharoosha Vihidun</span>
+  </div>
+
+</main>
+
+<footer class="article-footer">
+  <div class="footer-note">
+    <strong>Disclaimer:</strong> This article is for informational and educational purposes only and does not constitute financial advice. Interest rate forecasts are scenario analyses, not official projections. Readers should consult a qualified financial adviser before making borrowing decisions. All figures cited are sourced from publicly available data as of June 2026.
+  </div>
+  <ul class="sources-list">
+    <li>Central Bank of Sri Lanka — Monetary Policy Reviews (Jan 2026, May 2026); AWPLR weekly data</li>
+    <li>World Bank — Global Economic Prospects, June 2026; South Asia Regional Highlights</li>
+    <li>IMF — World Economic Outlook, April 2026</li>
+    <li>Callahan &amp; Mankin — "Persistent effect of El Niño on global economic growth," Science (2023)</li>
+    <li>Nature Communications — "Nonlinear El Niño impacts on the global economy under climate change" (2023)</li>
+    <li>ScienceDirect — "The El Niño Southern Oscillation and economic growth in the developing world" (2017)</li>
+    <li>World Economic Forum — "The coming El Niño is more than a climate event: it is a systemic shock," June 2026</li>
+    <li>NOAA / WMO — El Niño probability forecasts, June 2026</li>
+    <li>Macrobond — "El Niño: From Ocean Temperatures to Economic Risk," June 2026</li>
+    <li>Ada Derana / Sri Lanka Brief — El Niño 2026 impact analysis for Sri Lanka</li>
+  </ul>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script>
+Chart.defaults.font.family = "'Poppins', sans-serif";
+Chart.defaults.color = '#999999';
+
+const ORANGE = '#ff5722';
+const DARK   = '#111111';
+const GRAY   = '#999999';
+const RULE   = '#e4e0d8';
+const GREEN  = '#1a6b3c';
+const AMBER  = '#d4750a';
+const RED    = '#c0392b';
+const BLUE   = '#1a4a7a';
+
+const rateLabels = ['Jan 19','Apr 19','Jul 19','Oct 19','Jan 20','Apr 20','Jul 20','Oct 20','Jan 21','Apr 21','Jul 21','Oct 21','Jan 22','Apr 22','Jul 22','Oct 22','Jan 23','Apr 23','Jul 23','Oct 23','Jan 24','Apr 24','Jul 24','Oct 24','Jan 25','Apr 25','Jul 25','Oct 25','Jan 26','Jun 26'];
+const personal = [15.5,15.0,14.5,14.0,13.5,12.0,11.0,10.5,10.0,9.5,9.0,9.8,13.0,20.0,26.0,30.0,28.5,25.0,21.0,18.5,16.5,15.0,14.5,14.0,13.5,13.5,13.0,13.0,13.5,14.25];
+const housing  = [13.5,13.0,12.5,12.0,11.5,10.0,9.0,8.5,8.0,7.5,7.0,7.8,10.5,16.5,22.0,26.0,24.5,21.0,18.0,15.5,13.5,12.5,12.0,11.5,11.5,11.2,11.0,11.0,11.2,11.5];
+const awplr    = [11.8,11.5,11.2,11.0,10.5,9.0,7.5,7.0,6.5,6.0,5.5,6.2,8.5,14.0,20.5,27.0,25.5,22.0,18.5,16.0,13.5,11.8,11.0,10.5,10.0,9.8,9.6,9.5,8.9,9.7];
+
+new Chart(document.getElementById('rateChart'), {
+  type: 'line',
+  data: {
+    labels: rateLabels,
+    datasets: [
+      { label: 'Personal loan', data: personal, borderColor: ORANGE, backgroundColor: 'rgba(255,87,34,0.07)', borderWidth: 2.5, pointRadius: 2, fill: true, tension: 0.35 },
+      { label: 'Housing loan',  data: housing,  borderColor: DARK,   backgroundColor: 'rgba(17,17,17,0.04)',  borderWidth: 2,   pointRadius: 1.5, fill: true, tension: 0.35 },
+      { label: 'AWPLR',         data: awplr,    borderColor: GRAY,   borderWidth: 1.5, borderDash: [5,4], pointRadius: 0, fill: false, tension: 0.35 }
+    ]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: { legend: { display: false }, tooltip: { callbacks: { label: c => `${c.dataset.label}: ${c.parsed.y.toFixed(2)}%` } } },
+    scales: {
+      x: { ticks: { autoSkip: true, maxTicksLimit: 8, maxRotation: 40, font: { size: 11 } }, grid: { color: RULE } },
+      y: { min: 0, max: 34, ticks: { callback: v => v + '%', font: { size: 11 } }, grid: { color: RULE } }
+    }
+  }
+});
+
+new Chart(document.getElementById('emiChart'), {
+  type: 'bar',
+  data: {
+    labels: ['14.25% (current)', '14.65% (+0.5% OPR)', '15.05% (+1.0% OPR)', '15.45% (+1.5% OPR)'],
+    datasets: [{
+      label: 'Monthly EMI (Rs.)',
+      data: [48075, 48600, 49150, 49700],
+      backgroundColor: [GREEN, AMBER, AMBER, RED],
+      borderRadius: 6,
+      borderWidth: 0
+    }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: { legend: { display: false }, tooltip: { callbacks: { label: c => `Rs. ${c.parsed.y.toLocaleString()}` } } },
+    scales: {
+      x: { ticks: { font: { size: 11 } }, grid: { display: false } },
+      y: { min: 46000, max: 51000, ticks: { callback: v => 'Rs. ' + v.toLocaleString(), font: { size: 11 } }, grid: { color: RULE } }
+    }
+  }
+});
+
+new Chart(document.getElementById('gdpChart'), {
+  type: 'bar',
+  data: {
+    labels: ['Peru / Ecuador', 'Indonesia / Philippines', 'Sri Lanka (estimated)', 'India / Bangladesh', 'Sub-Saharan Africa', 'USA / Europe'],
+    datasets: [{
+      label: 'GDP loss (%)',
+      data: [-14.5, -11.5, -5.5, -2.5, -4.0, -1.75],
+      backgroundColor: [RED, RED, AMBER, AMBER, AMBER, GREEN],
+      borderRadius: 6,
+      borderWidth: 0
+    }]
+  },
+  options: {
+    indexAxis: 'y',
+    responsive: true, maintainAspectRatio: false,
+    plugins: { legend: { display: false }, tooltip: { callbacks: { label: c => `~${c.parsed.x.toFixed(1)}% GDP` } } },
+    scales: {
+      x: { max: 0, min: -18, ticks: { callback: v => v + '%', font: { size: 11 } }, grid: { color: RULE } },
+      y: { ticks: { font: { size: 12 } }, grid: { display: false } }
+    }
+  }
+});
+
+const fLabels = ['Jun 26','Aug 26','Oct 26','Dec 26','Feb 27','Apr 27','Jun 27','Aug 27','Oct 27','Dec 27'];
+new Chart(document.getElementById('forecastChart'), {
+  type: 'line',
+  data: {
+    labels: fLabels,
+    datasets: [
+      { label: 'Best case',     data: [9.7,9.5,9.3,9.2,9.2,9.1,9.0,9.0,9.1,9.2],         borderColor: GREEN, backgroundColor: 'rgba(26,107,60,0.07)',  borderWidth: 2, pointRadius: 3, fill: true, tension: 0.4 },
+      { label: 'Base case',     data: [9.7,10.0,10.5,11.0,11.5,11.8,12.0,11.8,11.5,11.0], borderColor: AMBER, backgroundColor: 'rgba(212,117,10,0.06)', borderWidth: 2, pointRadius: 3, fill: true, tension: 0.4 },
+      { label: 'Worst case',    data: [9.7,10.8,12.5,14.2,15.0,14.5,13.8,13.0,12.5,12.0], borderColor: RED,   backgroundColor: 'rgba(192,57,43,0.05)',  borderWidth: 2, pointRadius: 3, fill: true, tension: 0.4 },
+      { label: 'Current AWPLR', data: new Array(10).fill(9.7),                              borderColor: BLUE,  borderWidth: 1.5, borderDash: [6,4], pointRadius: 0, fill: false }
+    ]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: { legend: { display: false }, tooltip: { callbacks: { label: c => `${c.dataset.label}: ${c.parsed.y.toFixed(1)}%` } } },
+    scales: {
+      x: { ticks: { font: { size: 11 } }, grid: { color: RULE } },
+      y: { min: 8, max: 17, ticks: { callback: v => v + '%', font: { size: 11 } }, grid: { color: RULE } }
+    }
+  }
+});
+
+/* Auto-size iframe in parent — fires after charts render via ResizeObserver */
+function notifyHeight() {
+  window.parent.postMessage({ iframeHeight: document.documentElement.scrollHeight }, '*');
+}
+window.addEventListener('load', notifyHeight);
+new ResizeObserver(notifyHeight).observe(document.body);
+</script>
+</body>
+</html>

@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Journal #2 — Day 1 in the Pool</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { overflow: hidden; }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: #faf8f4;
+    color: #333333;
+    line-height: 1.85;
+    font-size: 17px;
+  }
+
+  .cover-image {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    object-position: top;
+    display: block;
+  }
+
+  .content {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+  }
+
+  .category-tag {
+    font-size: 12px;
+    font-weight: 700;
+    color: #ff5722;
+    background: rgba(255, 87, 34, 0.08);
+    border-radius: 50px;
+    padding: 4px 14px;
+    letter-spacing: 0.5px;
+    display: inline-block;
+  }
+
+  h1 {
+    font-size: 48px;
+    font-weight: 800;
+    color: #111111;
+    line-height: 1.15;
+    letter-spacing: -1.5px;
+    margin: 16px 0 12px;
+  }
+
+  .subtitle {
+    font-size: 20px;
+    color: #666666;
+    line-height: 1.6;
+    margin: 0 0 24px;
+  }
+
+  .meta {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    font-size: 13px;
+    color: #999999;
+    padding-bottom: 32px;
+    border-bottom: 1px solid #e4e0d8;
+    margin-bottom: 40px;
+  }
+
+  .dot {
+    width: 4px;
+    height: 4px;
+    background: #cccccc;
+    border-radius: 50%;
+    display: inline-block;
+    flex-shrink: 0;
+  }
+
+  h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #111111;
+    line-height: 1.3;
+    margin: 40px 0 16px;
+  }
+
+  h3 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #111111;
+    line-height: 1.3;
+    margin: 32px 0 12px;
+  }
+
+  p { font-size: 17px; color: #333333; line-height: 1.85; margin: 0 0 24px; }
+  p:last-child { margin-bottom: 0; }
+  strong { font-weight: 700; color: #111111; }
+  em { font-style: italic; }
+
+  hr {
+    border: none;
+    border-top: 1px solid #e4e0d8;
+    margin: 40px 0;
+  }
+
+  a { color: #ff5722; text-decoration: underline; text-underline-offset: 3px; }
+
+  .float-right {
+    float: right;
+    width: 260px;
+    margin: 4px 0 20px 28px;
+  }
+
+  .float-right img {
+    width: 100%;
+    border-radius: 12px;
+    display: block;
+  }
+
+  .float-right .caption {
+    display: block;
+    font-size: 12px;
+    color: #999999;
+    text-align: center;
+    margin-top: 6px;
+    line-height: 1.4;
+  }
+
+  .yt-card {
+    display: flex;
+    align-items: stretch;
+    border: 1px solid #e4e0d8;
+    border-radius: 12px;
+    overflow: hidden;
+    text-decoration: none;
+    margin: 24px 0;
+    background: #ffffff;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+
+  .yt-card:hover {
+    border-color: #ff5722;
+    box-shadow: 0 4px 16px rgba(255, 87, 34, 0.08);
+  }
+
+  .yt-body {
+    flex: 1;
+    padding: 16px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+    min-width: 0;
+  }
+
+  .yt-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #111111;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+
+  .yt-meta {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: #999999;
+  }
+
+  .yt-thumb {
+    width: 180px;
+    flex-shrink: 0;
+  }
+
+  .yt-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  @media (max-width: 768px) {
+    h1 { font-size: 30px; letter-spacing: -0.5px; }
+    .subtitle { font-size: 16px; }
+    .cover-image { height: 240px; }
+    .float-right { float: none; width: 100%; margin: 0 0 20px 0; }
+    .yt-thumb { width: 110px; }
+  }
+</style>
+</head>
+<body>
+
+<img class="cover-image" src="/swim-day1-kickboard.jpg" alt="Journal #2 — Day 1 in the Pool">
+
+<div class="content">
+  <span class="category-tag">Zero to IRONMAN</span>
+  <h1>Journal #2 — Day 1 in the Pool</h1>
+  <p class="subtitle">I swam as a kid — one length, 25 metres, with my arms. Today I got back in for the first time in years. Here's what happened.</p>
+  <div class="meta">
+    <span>Vihidun</span>
+    <span class="dot"></span>
+    <span>June 6, 2026</span>
+    <span class="dot"></span>
+    <span>Zero to IRONMAN · Swimming</span>
+  </div>
+
+  <h2>Back in the Pool</h2>
+
+  <p>Today was the first proper session of IRONMAN swim training. And I'll be honest with you — it was humbling.</p>
+
+  <p>As a kid and into my teens, around grade 10, 11, and even after grade 13, I could swim. One length, 25 metres, using my arms. That was the ceiling. A 50 metre pool was never possible even then. And that was a long time ago.</p>
+
+  <p>Getting in today, the muscle memory I thought I had? Gone. The breathing rhythm? Nowhere. I couldn't do a proper kick and make it 25 metres in anything that resembles actual swimming.</p>
+
+  <p>That's where I'm starting from.</p>
+
+  <hr>
+
+  <h2>What Day 1 Looked Like</h2>
+
+  <div class="float-right">
+    <img src="/swim-day1-kickboard.jpg" alt="Day 1 — kickboard, new goggles, first 25m done">
+    <span class="caption">Day 1 — kickboard, new goggles, first 25m done</span>
+  </div>
+
+  <p>The plan for today was simple: don't try to do too much. Just get comfortable in the water again.</p>
+
+  <p>I grabbed a kickboard and focused on two things — <strong>breathing</strong> and <strong>kicking</strong>. Float on the board, face down, exhale steadily into the water, breathe to the side. Kick. Stay horizontal. Try not to panic when the rhythm breaks.</p>
+
+  <p>The kickboard removes arm coordination entirely. You're just holding on, kicking, and learning to breathe. It sounds easy. It is not easy.</p>
+
+  <p>By the end of the session I managed to kick the full 25 metres with the board. Not quickly, not cleanly — but I did it, and the breathing clicked a few times across those lengths.</p>
+
+  <p><strong>First day: quite successful.</strong> Given where I started, that's enough.</p>
+
+  <hr>
+
+  <h2>New Kit</h2>
+
+  <p>Two things I sorted before getting in:</p>
+
+  <p><strong>Goggles</strong> — My previous pair went missing somewhere. Rather than keep looking, I got a new pair. Comfortable, seals well, doesn't fog.</p>
+
+  <p><strong>Sunscreen</strong> — I didn't expect this to be a problem until I got a real sunburn after a session. Sun reflecting off water is brutal. I picked up <strong>HELIOCARE 360 Gel Oil-Free</strong> for now. Not ideal for swimming — it's not a water-resistant sport formula — but it's what I could get immediately, and something is better than nothing.</p>
+
+  <p>The proper solution is <strong>Banana Boat Sport Ultra SPF 50+</strong>, which is on the way. That's the one built for this: sweat-resistant, stays on in water, designed for outdoor sport. Once it arrives, that becomes the standard.</p>
+
+  <hr>
+
+  <h2>What I Watched Before Getting In</h2>
+
+  <p>Before day one, I came across this video by Taren — someone who started unable to swim properly and eventually set open water marathon records. It changed how I thought about everything.</p>
+
+  <a class="yt-card" href="https://www.youtube.com/watch?v=FncinCRbkAE" target="_blank" rel="noopener noreferrer">
+    <div class="yt-body">
+      <div class="yt-title" id="yt-title">Watch on YouTube</div>
+      <div class="yt-meta">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="#ff0000">
+          <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.8 15.5V8.5l6.3 3.5-6.3 3.5z"/>
+        </svg>
+        <span id="yt-author"></span>
+        <span id="yt-sep" style="display:none">·</span>
+        <span>youtube.com</span>
+      </div>
+    </div>
+    <div class="yt-thumb">
+      <img src="https://img.youtube.com/vi/FncinCRbkAE/mqdefault.jpg" alt="Watch on YouTube">
+    </div>
+  </a>
+
+  <p>The core argument is that most beginner swimmers — and most coaches — skip three fundamentals that need to come before any training plan or fitness work. I recognised myself in every single one.</p>
+
+  <p><strong>1. Breathe out, not in — "breathing like a dolphin"</strong></p>
+
+  <p>The instinct when you put your face in water is to panic and gasp for air. But the real fix is the opposite: focus entirely on breathing <em>out</em> as forcefully as possible the entire time your face is in the water. The exhale clears the carbon dioxide that builds up in your lungs — it's the CO₂ that creates the desperate breathless feeling, not lack of oxygen. Less CO₂ also means less air trapped in your chest, so your upper body stops floating too high and dragging your legs down.</p>
+
+  <p>The drill: shallow end, hands on the pool edge, face in the water, blow bubbles as hard as you can. Build from there — one hand, then kicking off the bottom, then turning to breathe. Simple. Harder than it sounds.</p>
+
+  <p><strong>2. Float in a straight line — "floating like a log"</strong></p>
+
+  <p>A heavy log skims the surface effortlessly. A tangled branch with drag in every direction is nearly impossible to pull through water. Most beginners swim like the branch — bent at the hips, legs dragging, everything working against itself.</p>
+
+  <p>The goal is to hold the body as one long flat unit: core engaged lightly, heels just kissing the surface, kick narrow as if your feet are inside an ice cream tub. Fins, a snorkel, and a kickboard help you feel what that position should be. You strip them away gradually as the body learns to hold it on its own.</p>
+
+  <p><strong>3. Swim straight — "like an arrow"</strong></p>
+
+  <p>Most triathletes swim 20–30% further than necessary because they drift off course and overcorrect. The fix is in the arm entry — entering just outside the ear, palm facing down or back, staying in a clean channel in front of the shoulder. No crossing the centre line, no wide sweeping stroke. Dead straight, every time.</p>
+
+  <p>Pair that with sighting every five or six strokes in open water and you stop wasting distance you didn't need to swim.</p>
+
+  <hr>
+
+  <p>All three of these went into how I'm approaching the first weeks. It's not about fitness yet — it's about building these foundations first. The full training plan is coming once I've put a few more sessions in and know what's actually working.</p>
+
+  <p>More updates soon.</p>
+</div>
+
+<script>
+fetch('https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=FncinCRbkAE&format=json')
+  .then(r => r.json())
+  .then(data => {
+    if (data.title) document.getElementById('yt-title').textContent = data.title;
+    if (data.author_name) {
+      document.getElementById('yt-author').textContent = data.author_name;
+      document.getElementById('yt-sep').style.display = '';
+    }
+  })
+  .catch(() => {});
+</script>
+
+<script>
+function notifyHeight() {
+  window.parent.postMessage({ iframeHeight: document.documentElement.scrollHeight }, '*');
+}
+window.addEventListener('load', notifyHeight);
+new ResizeObserver(notifyHeight).observe(document.body);
+</script>
+</body>
+</html>
